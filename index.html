@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obaapa Essen — Local & Continental Restaurant in Dansoman, Accra | Order Online</title>
+<meta name="description" content="Authentic Ghanaian jollof, banku & tilapia, waakye and continental favourites at Dansoman Junction, Accra. Order online for pickup, dine in, or book buffet catering for your event. Call 0244 216 126.">
+<meta property="og:title" content="Obaapa Essen — Local & Continental Restaurant, Dansoman">
+<meta property="og:description" content="Home-style Ghanaian and continental dishes cooked fresh daily. Order for pickup in minutes — pay when you collect.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/flyer.jpg">
+<meta property="og:url" content="https://kingjudecole.github.io/ObaapaEssen/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141414">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Obaapa Essen",
+  "image": "https://kingjudecole.github.io/ObaapaEssen/assets/logo.png",
+  "servesCuisine": ["Ghanaian", "West African", "Continental"],
+  "priceRange": "GH₵",
+  "telephone": "+233244216126",
+  "email": "info@obaapaessen.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hansonic, Dansoman Junction, Off Odorkor–Kaneshie Road",
+    "addressLocality": "Accra",
+    "addressCountry": "GH"
+  },
+  "url": "https://kingjudecole.github.io/ObaapaEssen/",
+  "acceptsReservations": "True",
+  "hasMenu": "https://kingjudecole.github.io/ObaapaEssen/#menu"
+}
+</script>
+<style>
+:root{
+  --ink:#141414;
+  --ink-2:#1d1f18;
+  --ink-3:#262922;
+  --lime:#b5d334;
+  --lime-bright:#cdea3a;
+  --gold:#d4cc1f;
+  --cream:#f7f6ef;
+  --paper:#fffef8;
+  --mut:#8a8d80;
+  --line:rgba(181,211,52,.18);
+  --r-lg:26px;
+  --r-md:18px;
+  --r-sm:12px;
+  --shadow:0 18px 50px -18px rgba(0,0,0,.45);
+  --ff-d:"Fraunces",serif;
+  --ff-b:"Karla",sans-serif;
+  --wa:#25D366;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{font-family:var(--ff-b);background:var(--ink);color:var(--cream);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--lime);color:var(--ink)}
+
+h1,h2,h3{font-family:var(--ff-d);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--lime)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--lime);border-radius:2px}
+.sec-title{font-size:clamp(34px,5vw,58px);margin:14px 0 12px}
+.sec-sub{color:var(--mut);max-width:560px;font-size:17px}
+.wrap{width:min(1180px,92%);margin:0 auto}
+section{padding:96px 0}
+@media(max-width:720px){section{padding:72px 0}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:15px;padding:16px 30px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s,background .22s,color .22s;letter-spacing:.01em;min-height:48px}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:var(--lime-bright);transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px -10px rgba(181,211,52,.5)}
+.btn-ghost{border:2px solid rgba(247,246,239,.28);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-3px)}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(0,0,0,.55)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.btn:active{transform:scale(.97)}
+
+/* ---------- header ---------- */
+.topbar{background:var(--lime);color:var(--ink);font-size:13px;font-weight:800;overflow:hidden;white-space:nowrap;position:relative;z-index:60}
+.topbar-track{display:inline-flex;gap:48px;padding:9px 0;animation:marquee 26s linear infinite;will-change:transform}
+.topbar-track span{display:inline-flex;align-items:center;gap:10px;letter-spacing:.04em}
+.topbar-track b{opacity:.55}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+header.nav{position:sticky;top:0;z-index:70;background:rgba(20,20,20,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:52px;width:auto;transition:transform .3s}
+.brand:hover img{transform:rotate(-4deg) scale(1.05)}
+.nav-links{display:flex;align-items:center;gap:30px;font-weight:700;font-size:15px}
+.nav-links a{position:relative;padding:6px 0;color:var(--cream);opacity:.85;transition:opacity .2s,color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--lime);border-radius:2px;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+.nav-links a:hover{opacity:1;color:var(--lime)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.nav-phone{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;color:var(--lime)}
+.cart-btn{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--lime);color:var(--ink);font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
+.cart-btn:hover{background:var(--lime-bright);transform:translateY(-2px)}
+.cart-count{position:absolute;top:-7px;right:-7px;background:var(--ink);color:var(--lime);border:2px solid var(--lime);font-size:11px;font-weight:800;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.cart-count.pop{transform:scale(1.35)}
+.burger{display:none;flex-direction:column;gap:5px;padding:10px;min-width:44px;min-height:44px;justify-content:center;align-items:center}
+.burger span{width:24px;height:2.5px;background:var(--cream);border-radius:3px;transition:transform .3s,opacity .3s}
+.burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media(max-width:960px){
+  .nav-links,.nav-phone{display:none}
+  .burger{display:flex}
+}
+.m-menu{position:fixed;inset:0;top:0;background:var(--ink-2);z-index:65;display:flex;flex-direction:column;justify-content:center;padding:0 8%;gap:6px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.77,0,.18,1)}
+.m-menu.open{transform:translateY(0)}
+.m-menu a{font-family:var(--ff-d);font-size:clamp(30px,8vw,44px);font-weight:600;padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .4s,color .2s}
+.m-menu.open a{opacity:1;transform:translateY(0)}
+.m-menu a:hover{color:var(--lime)}
+.m-menu a svg{width:22px;height:22px;color:var(--lime)}
+.m-menu .m-contact{margin-top:26px;display:flex;gap:12px;opacity:0;transition:opacity .4s .3s}
+.m-menu.open .m-contact{opacity:1}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;padding:70px 0 90px}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(1000px 520px at 82% -10%,rgba(181,211,52,.16),transparent 60%),
+  radial-gradient(700px 500px at -10% 110%,rgba(212,204,31,.10),transparent 60%),
+  var(--ink)}
+.hero-grain{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(181,211,52,.12);border:1px solid rgba(181,211,52,.35);color:var(--lime);font-size:13px;font-weight:800;padding:9px 18px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(181,211,52,.6)}55%{box-shadow:0 0 0 9px rgba(181,211,52,0)}}
+.hero h1{font-size:clamp(44px,6.4vw,82px);margin:22px 0 20px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--lime);position:relative;white-space:nowrap}
+.hero h1 em svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px;color:var(--gold)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#c9ccbe;max-width:520px;margin-bottom:34px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.hero-stats{display:flex;gap:38px;flex-wrap:wrap}
+.hstat b{font-family:var(--ff-d);font-size:32px;color:var(--lime);display:block;line-height:1}
+.hstat span{font-size:13px;color:var(--mut);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.plate-ring{position:relative;width:min(460px,86vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 28%,#2c2f26,#191b15 68%);box-shadow:var(--shadow),inset 0 0 0 1px rgba(181,211,52,.15);display:flex;align-items:center;justify-content:center;animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-16px) rotate(1.2deg)}}
+.plate-ring img{width:70%;filter:drop-shadow(0 22px 30px rgba(0,0,0,.5))}
+.orbit{position:absolute;inset:-26px;border-radius:50%;animation:spin 32s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit text{font-size:11.5px;font-weight:800;letter-spacing:.34em;fill:var(--lime);text-transform:uppercase}
+.chip{position:absolute;background:var(--paper);color:var(--ink);border-radius:16px;padding:12px 16px;font-weight:800;font-size:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;animation:chipfloat 6s ease-in-out infinite}
+.chip small{display:block;font-weight:600;color:#6a6d60;font-size:11.5px}
+.chip .ico{width:38px;height:38px;border-radius:12px;background:var(--lime);display:flex;align-items:center;justify-content:center;flex:none}
+.chip .ico svg{width:20px;height:20px;color:var(--ink)}
+.chip-1{top:6%;left:-4%;animation-delay:.6s}
+.chip-2{bottom:10%;right:-6%;animation-delay:1.4s}
+@keyframes chipfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--mut);font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase}
+.scroll-hint .wheel{width:22px;height:36px;border:2px solid var(--mut);border-radius:12px;position:relative}
+.scroll-hint .wheel::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;background:var(--lime);border-radius:3px;transform:translateX(-50%);animation:wheel 1.8s ease-in-out infinite}
+@keyframes wheel{0%{opacity:1;top:6px}70%{opacity:0;top:18px}100%{opacity:0}}
+@media(max-width:960px){
+  .hero{min-height:auto;padding:56px 0 80px}
+  .hero-in{grid-template-columns:1fr;gap:48px}
+  .chip-1{left:0}.chip-2{right:0}
+}
+
+/* ---------- ticker divider ---------- */
+.food-ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap;transform:rotate(-1.4deg);margin:0 -2%;padding:0}
+.food-ticker .track{display:inline-flex;gap:0;animation:marquee 30s linear infinite;padding:14px 0}
+.food-ticker span{font-family:var(--ff-d);font-weight:700;font-size:22px;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+.food-ticker span::after{content:"✦";font-size:15px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
+
+/* ---------- signatures ---------- */
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.sig-card{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--ink-2);border:1px solid var(--line);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+.sig-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.sig-card .ph{aspect-ratio:4/3;overflow:hidden}
+.sig-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.sig-card:hover .ph img{transform:scale(1.08)}
+.sig-card .bd{padding:22px 24px 26px}
+.sig-card h3{font-size:24px;margin-bottom:6px}
+.sig-card p{color:var(--mut);font-size:14.5px;margin-bottom:16px}
+.sig-card .row{display:flex;align-items:center;justify-content:space-between}
+.price{font-family:var(--ff-d);font-weight:700;font-size:21px;color:var(--lime)}
+.add-mini{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:800;font-size:13.5px;padding:10px 18px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
+.add-mini:hover{background:var(--lime-bright);transform:scale(1.06)}
+.tagpill{position:absolute;top:16px;left:16px;background:var(--ink);color:var(--lime);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1px solid rgba(181,211,52,.4)}
+@media(max-width:900px){.sig-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+
+/* ---------- menu / ordering ---------- */
+#menu{background:var(--cream);color:var(--ink);border-radius:48px 48px 0 0}
+#menu .eyebrow{color:#5f7a10}
+#menu .eyebrow::before{background:#5f7a10}
+#menu .sec-sub{color:#6a6d60}
+.menu-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.menu-search{position:relative;min-width:min(320px,100%)}
+.menu-search input{width:100%;padding:15px 20px 15px 48px;border-radius:999px;border:2px solid #dfe0d2;background:#fff;font-family:inherit;font-size:15px;font-weight:600;transition:border-color .2s,box-shadow .2s}
+.menu-search input:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(181,211,52,.25)}
+.menu-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9a9d8e}
+.tabs{display:flex;gap:10px;margin:36px 0 30px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:12px 24px;border-radius:999px;font-weight:800;font-size:14.5px;background:#fff;color:#5b5e50;border:2px solid #e4e5d8;transition:all .25s;min-height:44px}
+.tab:hover{border-color:var(--lime);color:var(--ink)}
+.tab.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.dish{background:#fff;border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:8px;border:1px solid #ecede0;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;position:relative;overflow:hidden}
+.dish::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--lime);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.dish:hover{transform:translateY(-5px);box-shadow:0 16px 40px -18px rgba(20,20,20,.22)}
+.dish:hover::before{transform:scaleY(1)}
+.dish .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dish h4{font-family:var(--ff-d);font-size:19px;font-weight:600;line-height:1.2}
+.dish .desc{font-size:13.8px;color:#77796b;flex:1}
+.dish .foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.dish .price{font-size:19px;color:var(--ink)}
+.dish .price small{font-size:12px;font-weight:800;color:#9a9d8e;margin-right:2px}
+.qty-add{display:flex;align-items:center;gap:0}
+.add-btn{background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px}
+.add-btn:hover{transform:scale(1.07);background:#000}
+.add-btn svg{width:14px;height:14px}
+.dish .badge{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f7a10;background:rgba(181,211,52,.22);padding:5px 10px;border-radius:999px;flex:none}
+.empty-note{text-align:center;padding:60px 20px;color:#9a9d8e;font-weight:700;display:none}
+.menu-cta-bar{margin-top:44px;background:var(--ink);color:var(--cream);border-radius:var(--r-lg);padding:30px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.menu-cta-bar h3{font-size:26px}
+.menu-cta-bar p{color:var(--mut);font-size:14.5px}
+
+/* ---------- how it works ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;counter-reset:step}
+.step{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 28px;position:relative;transition:transform .3s,border-color .3s}
+.step:hover{transform:translateY(-6px);border-color:rgba(181,211,52,.5)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--ff-d);font-size:54px;font-weight:700;color:transparent;-webkit-text-stroke:1.5px rgba(181,211,52,.55);display:block;line-height:1;margin-bottom:18px}
+.step h3{font-size:22px;margin-bottom:10px}
+.step p{color:var(--mut);font-size:14.8px}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* ---------- events / buffet ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split .ph{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);position:relative}
+.split .ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.split .sticker{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--ink);font-weight:800;font-size:13px;padding:14px;border-radius:50%;width:96px;height:96px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.25;transform:rotate(8deg);animation:wob 5s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(8deg)}50%{transform:rotate(-4deg)}}
+.check-list{margin:26px 0 34px;display:grid;gap:14px}
+.check-list li{list-style:none;display:flex;gap:14px;align-items:flex-start;font-size:16px;color:#d7dacb}
+.check-list .tick{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(181,211,52,.16);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.check-list .tick svg{width:14px;height:14px;color:var(--lime)}
+@media(max-width:920px){.split{grid-template-columns:1fr;gap:40px}}
+
+/* ---------- reviews ---------- */
+#reviews{background:var(--ink-2)}
+.rev-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;margin-top:50px}
+.g-card{background:var(--paper);color:var(--ink);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow)}
+.g-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.g-head .glogo{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center}
+.g-head b{font-size:17px}
+.g-head small{display:block;color:#77796b;font-weight:600}
+.stars{display:flex;gap:3px;color:#f4b400}
+.stars svg{width:18px;height:18px}
+.review-slot{border:2px dashed #d9dac9;border-radius:var(--r-md);padding:20px;margin-top:14px;color:#8b8e7e;font-size:14px;font-weight:600;line-height:1.5}
+.review-slot b{color:var(--ink)}
+.rate-card{background:linear-gradient(145deg,#20231b,#171913);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px}
+.rate-card h3{font-size:26px;margin-bottom:10px}
+.rate-card p{color:var(--mut);font-size:15px;margin-bottom:24px}
+.star-input{display:flex;gap:8px;margin-bottom:24px}
+.star-input button{padding:6px;transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+.star-input button:hover{transform:scale(1.25) rotate(-8deg)}
+.star-input svg{width:38px;height:38px;color:#3d4034;transition:color .2s;fill:none;stroke:currentColor;stroke-width:1.6}
+.star-input button.lit svg{color:var(--gold);fill:var(--gold);stroke:var(--gold)}
+.rate-msg{display:none;background:rgba(181,211,52,.1);border:1px solid rgba(181,211,52,.35);border-radius:var(--r-md);padding:20px;font-size:14.5px;line-height:1.55}
+.rate-msg.show{display:block;animation:fadeup .5s cubic-bezier(.22,1,.36,1)}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rate-msg .btn{margin-top:16px}
+@media(max-width:920px){.rev-grid{grid-template-columns:1fr}}
+
+/* ---------- visit ---------- */
+.visit-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:50px}
+.info-card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;display:flex;flex-direction:column;gap:24px}
+.info-row{display:flex;gap:16px;align-items:flex-start}
+.info-row .ic{flex:none;width:44px;height:44px;border-radius:14px;background:rgba(181,211,52,.13);display:flex;align-items:center;justify-content:center}
+.info-row .ic svg{width:20px;height:20px;color:var(--lime)}
+.info-row b{display:block;font-size:15.5px;margin-bottom:3px}
+.info-row p,.info-row a{color:var(--mut);font-size:14.5px;font-weight:600}
+.info-row a:hover{color:var(--lime)}
+.open-pill{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:13px;padding:8px 16px;border-radius:999px}
+.open-pill.open{background:rgba(181,211,52,.14);color:var(--lime)}
+.open-pill.closed{background:rgba(255,107,107,.12);color:#ff8a8a}
+.open-pill .dot{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.8s infinite}
+.map-frame{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);min-height:420px;filter:grayscale(.2) contrast(1.02)}
+.map-frame iframe{width:100%;height:100%;min-height:420px;border:0}
+@media(max-width:920px){.visit-grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
+.foot-cta{text-align:center;padding-bottom:70px;border-bottom:1px solid var(--line)}
+.foot-cta h2{font-size:clamp(38px,6vw,68px);margin-bottom:14px}
+.foot-cta h2 em{font-style:italic;color:var(--lime);font-weight:500}
+.foot-cta p{color:var(--mut);margin-bottom:32px;font-size:17px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding:60px 0}
+.foot-grid h4{font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:18px}
+.foot-grid ul{list-style:none;display:grid;gap:11px}
+.foot-grid a,.foot-grid p{color:#9a9d8e;font-size:14.5px;font-weight:600;transition:color .2s}
+.foot-grid a:hover{color:var(--lime)}
+.foot-brand img{height:64px;margin-bottom:18px}
+.socials{display:flex;gap:12px;margin-top:20px}
+.socials a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,border-color .2s}
+.socials a:hover{background:var(--lime);border-color:var(--lime);transform:translateY(-3px)}
+.socials a:hover svg{color:var(--ink)}
+.socials svg{width:18px;height:18px;color:var(--cream);transition:color .2s}
+.foot-marq{border-top:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.foot-marq .track{display:inline-flex;animation:marquee 40s linear infinite;padding:18px 0}
+.foot-marq span{font-family:var(--ff-d);font-size:clamp(40px,7vw,74px);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(181,211,52,.35);padding:0 30px}
+.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:22px 0;font-size:13px;color:#6f7264;border-top:1px solid var(--line)}
+@media(max-width:960px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- cart drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(10,10,8,.6);backdrop-filter:blur(3px);z-index:90;opacity:0;pointer-events:none;transition:opacity .35s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(440px,100%);background:var(--cream);color:var(--ink);z-index:95;transform:translateX(105%);transition:transform .45s cubic-bezier(.77,0,.18,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.35)}
+.drawer.show{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:22px 26px;border-bottom:1px solid #e4e5d8}
+.drawer-head h3{font-size:24px}
+.drawer-head button{width:44px;height:44px;border-radius:50%;background:#eceddf;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.drawer-head button:hover{background:var(--lime);transform:rotate(90deg)}
+.drawer-body{flex:1;overflow-y:auto;padding:20px 26px;display:flex;flex-direction:column;gap:14px}
+.cart-empty{text-align:center;margin:auto;color:#9a9d8e;font-weight:700}
+.cart-empty svg{width:60px;height:60px;margin:0 auto 14px;color:#cfd1c0}
+.ci{display:flex;gap:14px;background:#fff;border:1px solid #ecede0;border-radius:var(--r-md);padding:16px;animation:fadeup .4s cubic-bezier(.22,1,.36,1)}
+.ci .nm{font-weight:800;font-size:15px}
+.ci .pr{font-size:13.5px;color:#77796b;font-weight:700}
+.ci .qty{display:flex;align-items:center;gap:12px;margin-top:8px}
+.ci .qty button{width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--lime);font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.ci .qty button:hover{transform:scale(1.12)}
+.ci .qty b{min-width:20px;text-align:center}
+.ci .line-total{margin-left:auto;text-align:right;display:flex;flex-direction:column;justify-content:space-between}
+.ci .line-total b{font-family:var(--ff-d);font-size:18px}
+.ci .rm{color:#c0432b;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.ci .rm:hover{text-decoration:underline}
+.drawer-foot{border-top:1px solid #e4e5d8;padding:22px 26px;background:#fffef8}
+.total-row{display:flex;justify-content:space-between;font-weight:800;font-size:16px;margin-bottom:6px}
+.total-row.grand{font-family:var(--ff-d);font-size:24px;margin:10px 0 18px}
+.total-row small{color:#9a9d8e;font-weight:700}
+.co-field{margin-bottom:12px}
+.co-field label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#77796b;margin-bottom:6px}
+.co-field input,.co-field select,.co-field textarea{width:100%;padding:13px 16px;border-radius:12px;border:2px solid #e0e1d2;background:#fff;font-family:inherit;font-size:14.5px;font-weight:600;transition:border-color .2s,box-shadow .2s}
+.co-field input:focus,.co-field select:focus,.co-field textarea:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(181,211,52,.22)}
+.co-field .err{color:#c0432b;font-size:12px;font-weight:700;margin-top:4px;display:none}
+.co-field.invalid input{border-color:#c0432b}
+.co-field.invalid .err{display:block}
+.co-note{font-size:12.5px;color:#8b8e7e;font-weight:600;text-align:center;margin-top:12px}
+.btn-wa{width:100%;background:var(--wa);color:#fff;justify-content:center}
+.btn-wa:hover{background:#1fb857;transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(37,211,102,.5)}
+
+/* ---------- floating + bottom nav ---------- */
+.float-wa{position:fixed;bottom:88px;right:18px;z-index:80;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.55);transition:transform .25s cubic-bezier(.34,1.56,.64,1);animation:pulse 2.4s infinite}
+.float-wa:hover{transform:scale(1.12) rotate(8deg)}
+.float-wa svg{width:30px;height:30px;color:#fff}
+@media(min-width:961px){.float-wa{bottom:26px;right:26px}}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:80;background:rgba(20,20,20,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);display:none;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+.bottom-nav .bn-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.bottom-nav a,.bottom-nav button{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px;font-weight:800;letter-spacing:.04em;color:#9a9d8e;padding:8px 4px;min-height:52px;transition:color .2s;position:relative}
+.bottom-nav svg{width:22px;height:22px}
+.bottom-nav a:active,.bottom-nav button:active{color:var(--lime)}
+.bottom-nav .bn-badge{position:absolute;top:2px;right:calc(50% - 20px);background:var(--lime);color:var(--ink);font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+@media(max-width:960px){.bottom-nav{display:block}body{padding-bottom:74px}}
+
+/* ---------- toast ---------- */
+.toast-wrap{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:120;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none}
+.toast{background:var(--ink);color:var(--cream);border:1px solid rgba(181,211,52,.5);border-radius:999px;padding:13px 24px;font-weight:800;font-size:14px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);animation:toastin .45s cubic-bezier(.34,1.56,.64,1)}
+.toast svg{width:17px;height:17px;color:var(--lime)}
+@keyframes toastin{from{opacity:0;transform:translateY(-24px) scale(.9)}to{opacity:1;transform:none}}
+.toast.bye{animation:toastout .35s forwards}
+@keyframes toastout{to{opacity:0;transform:translateY(-20px) scale(.92)}}
+
+/* fly-to-cart dot */
+.fly-dot{position:fixed;width:16px;height:16px;border-radius:50%;background:var(--lime);z-index:110;pointer-events:none;box-shadow:0 0 0 4px rgba(181,211,52,.3)}
+</style>
+</head>
+<body>
+
+<!-- top marquee -->
+<div class="topbar" aria-hidden="true">
+  <div class="topbar-track" id="topTrack">
+    <span>📍 Hansonic, Dansoman Junction — Accra</span><b>•</b>
+    <span>Order ahead & skip the queue — pay on pickup</span><b>•</b>
+    <span>Dine-in · Take-out · Buffet for events</span><b>•</b>
+    <span>Call 0244 216 126</span><b>•</b>
+  </div>
+</div>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand" aria-label="Obaapa Essen home">
+      <img src="assets/logo.png" alt="Obaapa Essen logo">
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#how">How It Works</a>
+      <a href="#events">Buffet & Events</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Find Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+233244216126">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0244 216 126
+      </a>
+      <button class="cart-btn" id="cartOpen" aria-label="Open your order">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="17" height="17"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        My Order
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu">
+  <a href="#menu">Menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  <a href="#how">How It Works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  <a href="#events">Buffet & Events <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  <a href="#reviews">Reviews <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  <a href="#visit">Find Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+  <div class="m-contact">
+    <a class="btn btn-lime" href="tel:+233244216126">Call Us</a>
+    <a class="btn btn-ghost" href="https://wa.me/233244216126" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</div>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="hero-badge"><span class="dot"></span><span id="heroOpen">Cooking fresh today</span></span>
+      <h1>Real Ghanaian flavour, <em>cooked like home<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none"><path d="M3 10 C 50 2, 150 2, 197 9" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em> — ready when you are.</h1>
+      <p class="lead">From smoky jollof to banku & grilled tilapia, every plate at Obaapa Essen is cooked fresh at Dansoman Junction. Order ahead online, pay when you pick up — no queue, no stress.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-lime">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Order for Pickup
+        </a>
+        <a href="#events" class="btn btn-ghost">Book Buffet Catering</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><b data-count="30">0</b><span>Dishes on the menu</span></div>
+        <div class="hstat"><b>15<i style="font-style:normal">min</i></b><span>Avg. pickup time</span></div>
+        <div class="hstat"><b>100%</b><span>Cooked fresh daily</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="plate-ring">
+        <img src="assets/logo.png" alt="Obaapa Essen — chef hat, spoon and fork logo">
+        <svg class="orbit" viewBox="0 0 300 300" aria-hidden="true">
+          <defs><path id="circ" d="M150,150 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs>
+          <text><textPath href="#circ">LOCAL & CONTINENTAL RESTAURANT · DINE-IN · TAKE-OUT · BUFFET FOR EVENTS · </textPath></text>
+        </svg>
+      </div>
+      <div class="chip chip-1">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span>
+        <div>Order in 60 seconds<small>Straight to our kitchen via WhatsApp</small></div>
+      </div>
+      <div class="chip chip-2">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <div>Pay on pickup<small>Cash or MoMo at the counter</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><div class="wheel"></div>Scroll</div>
+</section>
+
+<!-- ticker -->
+<div class="food-ticker" aria-hidden="true">
+  <div class="track" id="foodTrack">
+    <span>Jollof</span><span>Banku & Tilapia</span><span>Waakye</span><span>Fufu & Light Soup</span><span>Kelewele</span><span>Fried Rice</span><span>Grilled Chicken</span><span>Sobolo</span>
+  </div>
+</div>
+
+<!-- signatures -->
+<section id="signatures">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">House Favourites</span>
+    <h2 class="sec-title">The plates Dansoman<br>talks about</h2>
+    <p class="sec-sub">Start with the three dishes our regulars order again and again. Cooked to order, generous portions, honest prices.</p></div>
+    <div class="sig-grid">
+      <article class="sig-card rv rv-d1">
+        <span class="tagpill">Most Ordered</span>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=900&auto=format&fit=crop" alt="Smoky party jollof rice with grilled chicken" loading="lazy"></div>
+        <div class="bd">
+          <h3>Party Jollof & Chicken</h3>
+          <p>Slow-cooked over open flame for that smoky party taste, with juicy grilled chicken and shito on the side.</p>
+          <div class="row"><span class="price">GH₵ 65</span><button class="add-mini" data-add="jollof-chicken">Add +</button></div>
+        </div>
+      </article>
+      <article class="sig-card rv rv-d2">
+        <span class="tagpill">Chef's Pride</span>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop" alt="Grilled whole tilapia served hot" loading="lazy"></div>
+        <div class="bd">
+          <h3>Banku & Grilled Tilapia</h3>
+          <p>Whole tilapia char-grilled to order, served with soft banku, fresh pepper sauce and salad. The weekend classic.</p>
+          <div class="row"><span class="price">GH₵ 95</span><button class="add-mini" data-add="banku-tilapia">Add +</button></div>
+        </div>
+      </article>
+      <article class="sig-card rv rv-d3">
+        <span class="tagpill">Saturday Special</span>
+        <div class="ph"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=900&auto=format&fit=crop" alt="Waakye special with all the accompaniments" loading="lazy"></div>
+        <div class="bd">
+          <h3>Waakye Special</h3>
+          <p>Rice & beans done properly — with gari, spaghetti, boiled egg, fried fish, wele and our signature shito.</p>
+          <div class="row"><span class="price">GH₵ 55</span><button class="add-mini" data-add="waakye-special">Add +</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- menu + ordering -->
+<section id="menu">
+  <div class="wrap">
+    <div class="menu-head rv">
+      <div>
+        <span class="eyebrow">Full Menu · Order Online</span>
+        <h2 class="sec-title">Pick your plate.<br>We'll start cooking.</h2>
+        <p class="sec-sub">Add dishes to your order, check out in one tap, and pay cash or MoMo when you collect at Dansoman Junction.</p>
+      </div>
+      <div class="menu-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="menuSearch" placeholder="Search the menu — try 'jollof'…" aria-label="Search menu">
+      </div>
+    </div>
+    <div class="tabs rv" id="tabs" role="tablist"></div>
+    <div class="dish-grid" id="dishGrid"></div>
+    <p class="empty-note" id="emptyNote">Nothing matches that search — try another dish name.</p>
+    <div class="menu-cta-bar rv">
+      <div>
+        <h3>Feeding a group?</h3>
+        <p>Family packs and office lunch bundles are cheaper by the bowl — ask us on WhatsApp.</p>
+      </div>
+      <a class="btn btn-lime" href="https://wa.me/233244216126?text=Hello%20Obaapa%20Essen!%20I%27d%20like%20to%20ask%20about%20group%20and%20family%20pack%20pricing." target="_blank" rel="noopener">Ask About Group Orders</a>
+    </div>
+  </div>
+</section>
+
+<!-- how it works -->
+<section id="how">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">How Ordering Works</span>
+    <h2 class="sec-title">From craving to collection<br>in three easy steps</h2></div>
+    <div class="steps">
+      <div class="step rv rv-d1">
+        <h3>Build your order</h3>
+        <p>Browse the menu, tap "Add" on anything you're craving, and adjust quantities in your order basket.</p>
+      </div>
+      <div class="step rv rv-d2">
+        <h3>Send it on WhatsApp</h3>
+        <p>Checkout sends your order straight to our kitchen's WhatsApp with everything pre-filled. We confirm in minutes with your pickup time.</p>
+      </div>
+      <div class="step rv rv-d3">
+        <h3>Pick up & pay</h3>
+        <p>Walk past the queue, collect your hot food at Dansoman Junction, and pay by cash or MoMo at the counter. Simple.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- buffet & events -->
+<section id="events">
+  <div class="wrap split">
+    <div class="ph rv">
+      <img src="assets/flyer.jpg" alt="Obaapa Essen — dine-in, take-out and buffet for events, with our head chef" loading="lazy">
+      <span class="sticker">Buffet for events</span>
+    </div>
+    <div class="rv rv-d1">
+      <span class="eyebrow">Buffet & Event Catering</span>
+      <h2 class="sec-title">Your event, catered like family cooked it</h2>
+      <p class="sec-sub" style="margin-bottom:6px">Weddings, funerals, office parties, church programmes — we bring the full Obaapa Essen spread to you, hot and on time.</p>
+      <ul class="check-list">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Local & continental buffet lines, sized from 20 to 500+ guests</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Professional service staff, chafing setup and cleanup included</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Menus planned around your budget — talk to us before you decide</li>
+      </ul>
+      <a class="btn btn-lime" href="https://wa.me/233244216126?text=Hello%20Obaapa%20Essen!%20I%27d%20like%20a%20buffet%20catering%20quote.%0AEvent%20type%3A%20%0ADate%3A%20%0ANumber%20of%20guests%3A%20" target="_blank" rel="noopener">Get a Catering Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">What Guests Say</span>
+    <h2 class="sec-title">Rated by the people<br>who actually eat here</h2></div>
+    <div class="rev-grid">
+      <div class="g-card rv">
+        <div class="g-head">
+          <span class="glogo"><svg viewBox="0 0 24 24" width="24" height="24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18A10.97 10.97 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg></span>
+          <div><b>Obaapa Essen on Google</b><small>Dansoman Junction, Accra</small></div>
+          <div class="stars" style="margin-left:auto" aria-label="5 star placeholder">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+        </div>
+        <div class="review-slot"><b>Your first reviews live here.</b><br>As real Google reviews come in, this card pulls in your latest 5-star words from actual guests — names, ratings and all. No made-up quotes, ever.</div>
+        <div class="review-slot">Ask every happy customer to tap the rating card on the right — good reviews here are what push Obaapa Essen to the top of "restaurant near me" searches in Dansoman.</div>
+        <a class="btn btn-dark" style="margin-top:20px" href="https://www.google.com/maps/search/Obaapa+Essen+Restaurant+Dansoman+Accra" target="_blank" rel="noopener">See Us on Google Maps</a>
+      </div>
+      <div class="rate-card rv rv-d1">
+        <h3>Ate with us today?</h3>
+        <p>Tap the stars to rate your meal — it takes ten seconds and it genuinely helps a local kitchen grow.</p>
+        <div class="star-input" id="starInput" role="radiogroup" aria-label="Rate your experience from 1 to 5 stars">
+          <button data-star="1" aria-label="1 star"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></button>
+          <button data-star="2" aria-label="2 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></button>
+          <button data-star="3" aria-label="3 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></button>
+          <button data-star="4" aria-label="4 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></button>
+          <button data-star="5" aria-label="5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></button>
+        </div>
+        <div class="rate-msg" id="rateHappy">
+          <b>Yes! That makes our day. 🙌</b><br>
+          Would you share those stars on Google? It takes 30 seconds and helps neighbours find us.
+          <br><a class="btn btn-lime" href="https://www.google.com/maps/search/Obaapa+Essen+Restaurant+Dansoman+Accra" target="_blank" rel="noopener">Post It on Google</a>
+        </div>
+        <div class="rate-msg" id="rateSad">
+          <b>We're sorry we missed the mark.</b><br>
+          Tell us exactly what went wrong — the chef reads every message personally, and we'll make it right.
+          <br><a class="btn btn-lime" href="https://wa.me/233244216126?text=Hello%20Obaapa%20Essen%2C%20I%20visited%20recently%20and%20I%20want%20to%20share%20some%20feedback%3A%20" target="_blank" rel="noopener">Message the Chef</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- visit -->
+<section id="visit">
+  <div class="wrap">
+    <div class="rv"><span class="eyebrow">Find Us</span>
+    <h2 class="sec-title">Dansoman Junction —<br>you can't miss us</h2></div>
+    <div class="visit-grid">
+      <div class="info-card rv">
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Address</b><p>Hansonic (Dansoman Junction),<br>Off Odorkor–Kaneshie Road, Accra</p></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <div><b>Opening Hours</b>
+            <p>Mon–Sat: 8:00am – 9:00pm<br>Sunday: 12:00pm – 8:00pm</p>
+            <span class="open-pill" id="openPill" style="margin-top:10px"><span class="dot"></span><span id="openText">Checking hours…</span></span>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><b>Call or WhatsApp</b>
+            <p><a href="tel:+233244216126">0244 216 126</a> · <a href="tel:+233303944024">0303 944 024</a> · <a href="tel:+233244962141">0244 962 141</a></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+          <div><b>Email</b><p><a href="mailto:info@obaapaessen.com">info@obaapaessen.com</a></p></div>
+        </div>
+        <a class="btn btn-lime" href="https://www.google.com/maps/search/Hansonic+Dansoman+Junction+Accra" target="_blank" rel="noopener" style="justify-content:center">Get Directions</a>
+      </div>
+      <div class="map-frame rv rv-d1">
+        <iframe title="Map to Obaapa Essen, Dansoman Junction, Accra" src="https://www.google.com/maps?q=Dansoman%20Junction%2C%20Accra%2C%20Ghana&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap foot-cta rv">
+    <h2>Hungry? <em>Don't overthink it.</em></h2>
+    <p>Your plate can be ready before you even leave the house.</p>
+    <a href="#menu" class="btn btn-lime">Start My Order</a>
+  </div>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="assets/logo.png" alt="Obaapa Essen">
+      <p>Local & continental restaurant at Dansoman Junction, Accra. Dine-in, take-out and buffet for events — cooked fresh, served with love.</p>
+      <div class="socials">
+        <a href="https://facebook.com/ObaapaEssen" target="_blank" rel="noopener" aria-label="Obaapa Essen on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com/ObaapaEssen" target="_blank" rel="noopener" aria-label="Obaapa Essen on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://x.com/ObaapaEssen" target="_blank" rel="noopener" aria-label="Obaapa Essen on X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.34l7.24-8.28L1.6 2h6.39l4.41 5.83L18.9 2zm-1.1 18.1h1.72L7.08 3.8H5.24l12.56 16.3z"/></svg></a>
+        <a href="https://wa.me/233244216126" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 2a9.87 9.87 0 0 0-8.53 14.83L2 22l5.31-1.47A9.87 9.87 0 1 0 12.05 2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#menu">Full Menu</a></li>
+        <li><a href="#signatures">House Favourites</a></li>
+        <li><a href="#events">Buffet & Events</a></li>
+        <li><a href="#reviews">Guest Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Order</h4>
+      <ul>
+        <li><a href="#menu">Order for Pickup</a></li>
+        <li><a href="https://wa.me/233244216126" target="_blank" rel="noopener">WhatsApp the Kitchen</a></li>
+        <li><a href="tel:+233244216126">Call to Order</a></li>
+        <li><a href="#visit">Directions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+233244216126">0244 216 126</a></li>
+        <li><a href="tel:+233303944024">0303 944 024</a></li>
+        <li><a href="mailto:info@obaapaessen.com">info@obaapaessen.com</a></li>
+        <li><p>Hansonic, Dansoman Junction,<br>Off Odorkor–Kaneshie Rd, Accra</p></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-marq" aria-hidden="true">
+    <div class="track" id="footTrack">
+      <span>OBAAPA ESSEN</span><span>·</span><span>TASTE OF HOME</span><span>·</span>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>© <span id="yr"></span> Obaapa Essen. All rights reserved.</span>
+    <span>Made with 🌶️ in Accra, Ghana</span>
+  </div>
+</footer>
+
+<!-- floating WA -->
+<a class="float-wa" href="https://wa.me/233244216126?text=Hello%20Obaapa%20Essen!" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 2a9.87 9.87 0 0 0-8.53 14.83L2 22l5.31-1.47A9.87 9.87 0 1 0 12.05 2z"/></svg>
+</a>
+
+<!-- app-style bottom nav (mobile) -->
+<nav class="bottom-nav" aria-label="Quick actions">
+  <div class="bn-in">
+    <a href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Home</a>
+    <a href="#menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>Menu</a>
+    <button id="bnCart" aria-label="Open your order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Order<span class="bn-badge" id="bnBadge" hidden>0</span></button>
+    <a href="tel:+233244216126"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+  </div>
+</nav>
+
+<!-- cart drawer -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" role="dialog" aria-modal="true">
+  <div class="drawer-head">
+    <h3>Your Order</h3>
+    <button id="cartClose" aria-label="Close order">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot" hidden>
+    <div class="total-row"><small>Items</small><span id="sumItems">0</span></div>
+    <div class="total-row grand"><span>Total</span><span id="sumTotal">GH₵ 0</span></div>
+    <div class="co-field">
+      <label for="coName">Your name</label>
+      <input id="coName" type="text" autocomplete="name" placeholder="e.g. Ama Mensah">
+      <span class="err">Please enter your name</span>
+    </div>
+    <div class="co-field">
+      <label for="coPhone">Phone number</label>
+      <input id="coPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 024 000 0000">
+      <span class="err">Please enter a valid phone number</span>
+    </div>
+    <div class="co-field">
+      <label for="coTime">Pickup time</label>
+      <select id="coTime">
+        <option value="As soon as possible">As soon as possible</option>
+        <option value="In 30 minutes">In 30 minutes</option>
+        <option value="In 1 hour">In 1 hour</option>
+        <option value="In 2 hours">In 2 hours</option>
+        <option value="I'll state a time in chat">I'll state a time in chat</option>
+      </select>
+    </div>
+    <div class="co-field">
+      <label for="coNote">Note for the kitchen (optional)</label>
+      <input id="coNote" type="text" placeholder="e.g. extra shito, no onions">
+    </div>
+    <button class="btn btn-wa" id="checkoutBtn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 2a9.87 9.87 0 0 0-8.53 14.83L2 22l5.31-1.47A9.87 9.87 0 1 0 12.05 2z"/></svg>
+      Send Order on WhatsApp
+    </button>
+    <p class="co-note">Pay cash or MoMo when you pick up. We'll confirm your order by reply.</p>
+  </div>
+</aside>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+/* ============ MENU DATA — edit prices & dishes here ============ */
+const MENU = [
+  // Local favourites
+  {id:"jollof-chicken",cat:"Local Favourites",name:"Party Jollof & Grilled Chicken",price:65,desc:"Smoky party-style jollof with juicy grilled chicken, salad and shito.",badge:"Bestseller"},
+  {id:"jollof-beef",cat:"Local Favourites",name:"Jollof & Beef",price:70,desc:"Our signature jollof with tender stewed beef chunks."},
+  {id:"waakye-special",cat:"Local Favourites",name:"Waakye Special",price:55,desc:"Rice & beans with gari, spaghetti, egg, fried fish, wele and shito.",badge:"Saturday Fave"},
+  {id:"banku-tilapia",cat:"Local Favourites",name:"Banku & Grilled Tilapia",price:95,desc:"Whole char-grilled tilapia with soft banku and fresh pepper.",badge:"Chef's Pride"},
+  {id:"banku-okro",cat:"Local Favourites",name:"Banku & Okro Stew",price:60,desc:"Rich okro stew loaded with assorted meat and smoked fish."},
+  {id:"fufu-goat",cat:"Local Favourites",name:"Fufu & Goat Light Soup",price:80,desc:"Pounded fufu in hot, spicy light soup with tender goat meat."},
+  {id:"fufu-chicken",cat:"Local Favourites",name:"Fufu & Chicken Soup",price:70,desc:"Classic comfort — fufu with free-range chicken light soup."},
+  {id:"kenkey-fish",cat:"Local Favourites",name:"Kenkey & Fried Fish",price:50,desc:"Ga kenkey with crispy fried fish, ground pepper and shito."},
+  {id:"omo-tuo",cat:"Local Favourites",name:"Omo Tuo & Groundnut Soup",price:65,desc:"Soft rice balls in creamy groundnut soup (Sundays)."},
+  {id:"red-red",cat:"Local Favourites",name:"Red Red & Plantain",price:45,desc:"Bean stew in palm oil with sweet fried plantain."},
+  // Rice & grills
+  {id:"fried-rice-chicken",cat:"Rice & Grills",name:"Assorted Fried Rice & Chicken",price:70,desc:"Wok-fried rice with veggies, sausage and crispy fried chicken."},
+  {id:"plain-rice-stew",cat:"Rice & Grills",name:"Plain Rice & Tomato Stew",price:45,desc:"Steamed rice with rich tomato stew — add chicken, beef or fish."},
+  {id:"grilled-chicken-chips",cat:"Rice & Grills",name:"Half Grilled Chicken & Chips",price:75,desc:"Marinated half chicken off the grill with golden fries and coleslaw."},
+  {id:"chicken-wings",cat:"Rice & Grills",name:"Spicy Grilled Wings (6pcs)",price:55,desc:"Sticky, spicy wings with our house pepper glaze."},
+  {id:"beef-kebab",cat:"Rice & Grills",name:"Beef Khebab Skewers (3)",price:40,desc:"Street-style suya-spiced beef skewers, grilled to order."},
+  {id:"gizzard-kebab",cat:"Rice & Grills",name:"Gizzard Khebab Skewers (3)",price:35,desc:"Tender spiced gizzard skewers with onions and pepper."},
+  // Continental
+  {id:"spaghetti-bolognese",cat:"Continental",name:"Spaghetti Bolognese",price:65,desc:"Slow-simmered minced beef ragù over al-dente spaghetti."},
+  {id:"club-sandwich",cat:"Continental",name:"Chicken Club Sandwich",price:55,desc:"Triple-decker with grilled chicken, egg, veggies and fries."},
+  {id:"beef-burger",cat:"Continental",name:"House Beef Burger",price:60,desc:"Juicy hand-pressed patty, cheese, house sauce and fries."},
+  {id:"fish-chips",cat:"Continental",name:"Fish & Chips",price:70,desc:"Golden battered fish fillet with fries and tartar sauce."},
+  {id:"chicken-salad",cat:"Continental",name:"Grilled Chicken Salad",price:50,desc:"Fresh greens, grilled chicken strips and citrus dressing."},
+  {id:"omelette-bread",cat:"Continental",name:"Spanish Omelette & Toast",price:35,desc:"Fluffy loaded omelette with buttered toast (till 11am)."},
+  // Sides & extras
+  {id:"kelewele",cat:"Sides & Extras",name:"Kelewele",price:25,desc:"Spiced, gingered fried plantain cubes — dangerously addictive.",badge:"Must Try"},
+  {id:"spring-rolls",cat:"Sides & Extras",name:"Spring Rolls (4)",price:35,desc:"Crispy vegetable spring rolls with sweet chilli dip."},
+  {id:"fries",cat:"Sides & Extras",name:"French Fries",price:25,desc:"Golden, salted, hot out of the fryer."},
+  {id:"coleslaw",cat:"Sides & Extras",name:"Fresh Coleslaw",price:15,desc:"Creamy cabbage & carrot slaw."},
+  {id:"extra-shito",cat:"Sides & Extras",name:"Extra Shito",price:10,desc:"Our legendary house black pepper sauce. Take some home."},
+  // Drinks
+  {id:"sobolo",cat:"Drinks",name:"Chilled Sobolo",price:15,desc:"House-brewed hibiscus drink with ginger and pineapple.",badge:"House Made"},
+  {id:"asana",cat:"Drinks",name:"Fresh Fruit Juice",price:25,desc:"Pineapple, watermelon or mixed — squeezed daily."},
+  {id:"soft-drink",cat:"Drinks",name:"Soft Drinks",price:10,desc:"Coke, Fanta, Sprite, Malta — chilled."},
+  {id:"water",cat:"Drinks",name:"Bottled Water",price:5,desc:"Chilled 750ml bottled water."}
+];
+const CATS = ["All", ...new Set(MENU.map(m=>m.cat))];
+const WA_NUMBER = "233244216126";
+const cedi = n => "GH₵ " + n.toLocaleString("en-GH");
+
+/* ============ STATE ============ */
+let cart = {};
+try{ cart = JSON.parse(localStorage.getItem("oe-cart")||"{}"); }catch(e){ cart={}; }
+const saveCart = () => localStorage.setItem("oe-cart", JSON.stringify(cart));
+
+/* ============ MENU RENDER ============ */
+const tabsEl = document.getElementById("tabs");
+const gridEl = document.getElementById("dishGrid");
+const emptyEl = document.getElementById("emptyNote");
+let activeCat = "All", query = "";
+
+CATS.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="tab"+(c==="All"?" on":"");
+  b.textContent=c; b.setAttribute("role","tab");
+  b.onclick=()=>{activeCat=c;document.querySelectorAll(".tab").forEach(t=>t.classList.remove("on"));b.classList.add("on");renderMenu();};
+  tabsEl.appendChild(b);
+});
+
+function renderMenu(){
+  const q=query.trim().toLowerCase();
+  const list=MENU.filter(m=>(activeCat==="All"||m.cat===activeCat)&&(!q||m.name.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q)));
+  gridEl.innerHTML=list.map(m=>`
+    <article class="dish">
+      <div class="top"><h4>${m.name}</h4>${m.badge?`<span class="badge">${m.badge}</span>`:""}</div>
+      <p class="desc">${m.desc}</p>
+      <div class="foot">
+        <span class="price"><small>GH₵</small>${m.price}</span>
+        <button class="add-btn" data-add="${m.id}" aria-label="Add ${m.name} to order">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>Add
+        </button>
+      </div>
+    </article>`).join("");
+  emptyEl.style.display=list.length?"none":"block";
+}
+renderMenu();
+document.getElementById("menuSearch").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+
+/* ============ CART ============ */
+const drawer=document.getElementById("drawer"),overlay=document.getElementById("overlay"),
+cartBody=document.getElementById("cartBody"),cartFoot=document.getElementById("cartFoot"),
+cartCount=document.getElementById("cartCount"),bnBadge=document.getElementById("bnBadge");
+
+function cartQty(){return Object.values(cart).reduce((a,b)=>a+b,0);}
+function cartTotal(){return Object.entries(cart).reduce((s,[id,q])=>{const m=MENU.find(x=>x.id===id);return s+(m?m.price*q:0);},0);}
+
+function renderCart(){
+  const qty=cartQty();
+  cartCount.textContent=qty;
+  cartCount.classList.add("pop");setTimeout(()=>cartCount.classList.remove("pop"),300);
+  bnBadge.textContent=qty; bnBadge.hidden=qty===0;
+  if(!qty){
+    cartBody.innerHTML=`<div class="cart-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Your order is empty.<br>Something smells good on the <a href="#menu" style="color:var(--ink);text-decoration:underline" onclick="closeCart()">menu</a>…</div>`;
+    cartFoot.hidden=true;return;
+  }
+  cartBody.innerHTML=Object.entries(cart).map(([id,q])=>{
+    const m=MENU.find(x=>x.id===id);if(!m)return"";
+    return`<div class="ci">
+      <div style="flex:1">
+        <div class="nm">${m.name}</div>
+        <div class="pr">${cedi(m.price)} each</div>
+        <div class="qty">
+          <button data-dec="${id}" aria-label="Decrease ${m.name}">−</button>
+          <b>${q}</b>
+          <button data-inc="${id}" aria-label="Increase ${m.name}">+</button>
+        </div>
+      </div>
+      <div class="line-total"><b>${cedi(m.price*q)}</b><button class="rm" data-rm="${id}">Remove</button></div>
+    </div>`;
+  }).join("");
+  document.getElementById("sumItems").textContent=qty;
+  document.getElementById("sumTotal").textContent=cedi(cartTotal());
+  cartFoot.hidden=false;
+}
+function addToCart(id,src){
+  cart[id]=(cart[id]||0)+1;saveCart();renderCart();
+  const m=MENU.find(x=>x.id===id);
+  toast(`${m?m.name:"Item"} added to your order`);
+  if(src)flyToCart(src);
+}
+function flyToCart(el){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const r=el.getBoundingClientRect(),target=(innerWidth<=960?document.getElementById("bnCart"):document.getElementById("cartOpen")).getBoundingClientRect();
+  const d=document.createElement("div");d.className="fly-dot";
+  d.style.left=r.left+r.width/2+"px";d.style.top=r.top+r.height/2+"px";
+  document.body.appendChild(d);
+  d.animate([{transform:"translate(0,0) scale(1)",opacity:1},{transform:`translate(${target.left-r.left}px,${target.top-r.top}px) scale(.4)`,opacity:.4}],{duration:600,easing:"cubic-bezier(.22,1,.36,1)"}).onfinish=()=>d.remove();
+}
+document.addEventListener("click",e=>{
+  const add=e.target.closest("[data-add]");if(add){addToCart(add.dataset.add,add);return;}
+  const inc=e.target.closest("[data-inc]");if(inc){cart[inc.dataset.inc]++;saveCart();renderCart();return;}
+  const dec=e.target.closest("[data-dec]");if(dec){const id=dec.dataset.dec;cart[id]--;if(cart[id]<=0)delete cart[id];saveCart();renderCart();return;}
+  const rm=e.target.closest("[data-rm]");if(rm){delete cart[rm.dataset.rm];saveCart();renderCart();return;}
+});
+function openCart(){drawer.classList.add("show");overlay.classList.add("show");document.body.style.overflow="hidden";}
+function closeCart(){drawer.classList.remove("show");overlay.classList.remove("show");document.body.style.overflow="";}
+document.getElementById("cartOpen").onclick=openCart;
+document.getElementById("bnCart").onclick=openCart;
+document.getElementById("cartClose").onclick=closeCart;
+overlay.onclick=closeCart;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCart();});
+renderCart();
+
+/* ============ CHECKOUT → WHATSAPP ============ */
+document.getElementById("checkoutBtn").onclick=()=>{
+  const nameF=document.getElementById("coName"),phoneF=document.getElementById("coPhone");
+  let ok=true;
+  const nameWrap=nameF.closest(".co-field"),phoneWrap=phoneF.closest(".co-field");
+  nameWrap.classList.toggle("invalid",!nameF.value.trim());
+  if(!nameF.value.trim())ok=false;
+  const digits=phoneF.value.replace(/\D/g,"");
+  phoneWrap.classList.toggle("invalid",digits.length<9);
+  if(digits.length<9)ok=false;
+  if(!ok){toast("Please fill your name and phone number");return;}
+  const lines=Object.entries(cart).map(([id,q])=>{const m=MENU.find(x=>x.id===id);return`• ${q} x ${m.name} — ${cedi(m.price*q)}`;});
+  const msg=[
+    "🛎️ *NEW PICKUP ORDER — Obaapa Essen website*","",
+    `*Name:* ${nameF.value.trim()}`,
+    `*Phone:* ${phoneF.value.trim()}`,
+    `*Pickup:* ${document.getElementById("coTime").value}`,"",
+    "*Order:*",...lines,"",
+    `*TOTAL: ${cedi(cartTotal())}*`,
+    document.getElementById("coNote").value.trim()?`\n*Note:* ${document.getElementById("coNote").value.trim()}`:"",
+    "","_Paying cash/MoMo on pickup. Please confirm my order & time. Medaase!_"
+  ].join("\n");
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+  toast("Opening WhatsApp with your order…");
+};
+
+/* ============ TOAST ============ */
+function toast(txt){
+  const w=document.getElementById("toastWrap"),t=document.createElement("div");
+  t.className="toast";
+  t.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>${txt}`;
+  w.appendChild(t);
+  setTimeout(()=>{t.classList.add("bye");setTimeout(()=>t.remove(),400);},2400);
+}
+
+/* ============ NAV / MOBILE MENU ============ */
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>10),{passive:true});
+const burger=document.getElementById("burger"),mMenu=document.getElementById("mMenu");
+burger.onclick=()=>{
+  const open=mMenu.classList.toggle("open");
+  burger.classList.toggle("open",open);
+  burger.setAttribute("aria-expanded",open);
+  document.body.style.overflow=open?"hidden":"";
+  mMenu.querySelectorAll("a").forEach((a,i)=>a.style.transitionDelay=open?(.1+i*.06)+"s":"0s");
+};
+mMenu.querySelectorAll("a").forEach(a=>a.onclick=()=>{mMenu.classList.remove("open");burger.classList.remove("open");document.body.style.overflow="";});
+
+/* ============ SCROLL REVEAL ============ */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+/* ============ COUNT-UP ============ */
+document.querySelectorAll("[data-count]").forEach(el=>{
+  const end=+el.dataset.count;
+  new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(!e.isIntersecting)return;ob.disconnect();
+    const t0=performance.now();
+    const tick=t=>{const p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+"+";if(p<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);
+  });}).observe(el);
+});
+
+/* ============ MARQUEE DUP ============ */
+["topTrack","foodTrack","footTrack"].forEach(id=>{const t=document.getElementById(id);t.innerHTML+=t.innerHTML;});
+
+/* ============ LIVE HOURS ============ */
+(function(){
+  const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+  const open = d===0 ? (h>=12&&h<20) : (h>=8&&h<21);
+  const pill=document.getElementById("openPill");
+  pill.classList.add(open?"open":"closed");
+  document.getElementById("openText").textContent=open?"Open now — kitchen is cooking":"Closed now — order for later";
+  document.getElementById("heroOpen").textContent=open?"Open now · Cooking fresh":"Opens soon · Pre-order for pickup";
+})();
+
+/* ============ STAR RATING FUNNEL ============ */
+const stars=[...document.querySelectorAll("#starInput button")];
+stars.forEach(b=>b.onclick=()=>{
+  const v=+b.dataset.star;
+  stars.forEach(s=>s.classList.toggle("lit",+s.dataset.star<=v));
+  document.getElementById("rateHappy").classList.toggle("show",v>=4);
+  document.getElementById("rateSad").classList.toggle("show",v<4);
+  try{localStorage.setItem("oe-rating",v);}catch(e){}
+});
+
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
