@@ -8,7 +8,7 @@
 <meta property="og:title" content="Obaapa Essen — Local & Continental Restaurant, Dansoman">
 <meta property="og:description" content="Home-style Ghanaian and continental dishes cooked fresh daily. Order for pickup in minutes — pay when you collect.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/flyer.jpg">
+<meta property="og:image" content="assets/buffet-banner.jpg">
 <meta property="og:url" content="https://kingjudecole.github.io/ObaapaEssen/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#141414">
@@ -95,7 +95,7 @@ section{padding:96px 0}
 .btn:active{transform:scale(.97)}
 
 /* ---------- header ---------- */
-.topbar{background:var(--lime);color:var(--ink);font-size:13px;font-weight:800;overflow:hidden;white-space:nowrap;position:relative;z-index:60}
+.topbar{background:#0c0d0a;color:var(--lime);font-size:13px;font-weight:800;overflow:hidden;white-space:nowrap;position:relative;z-index:60;border-bottom:1px solid var(--line)}
 .topbar-track{display:inline-flex;gap:48px;padding:9px 0;animation:marquee 26s linear infinite;will-change:transform}
 .topbar-track span{display:inline-flex;align-items:center;gap:10px;letter-spacing:.04em}
 .topbar-track b{opacity:.55}
@@ -199,7 +199,7 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .food-ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap;transform:rotate(-1.4deg);margin:0 -2%;padding:0}
 .food-ticker .track{display:inline-flex;gap:0;animation:marquee 30s linear infinite;padding:14px 0}
 .food-ticker span{font-family:var(--ff-d);font-weight:700;font-size:22px;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
-.food-ticker span::after{content:"✦";font-size:15px;color:var(--orange)}
+.food-ticker span::after{content:"✦";font-size:15px;color:var(--ink)}
 
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
@@ -233,27 +233,36 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .menu-search input{width:100%;padding:15px 20px 15px 48px;border-radius:999px;border:2px solid #dfe0d2;background:#fff;font-family:inherit;font-size:15px;font-weight:600;transition:border-color .2s,box-shadow .2s}
 .menu-search input:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(181,211,52,.25)}
 .menu-search svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9a9d8e}
-.tabs{display:flex;gap:10px;margin:36px 0 30px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;padding:12px 24px;border-radius:999px;font-weight:800;font-size:14.5px;background:#fff;color:#5b5e50;border:2px solid #e4e5d8;transition:all .25s;min-height:44px}
-.tab:hover{border-color:var(--lime);color:var(--ink)}
-.tab.on{background:var(--ink);color:var(--lime);border-color:var(--ink)}
-.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-.dish{background:#fff;border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:8px;border:1px solid #ecede0;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s;position:relative;overflow:hidden}
-.dish::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform .3s}
-.dish:hover{transform:translateY(-5px);box-shadow:0 16px 40px -18px rgba(20,20,20,.22)}
-.dish:hover::before{transform:scaleY(1)}
-.dish .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.dish h4{font-family:var(--ff-d);font-size:19px;font-weight:600;line-height:1.2}
-.dish .desc{font-size:13.8px;color:#77796b;flex:1}
-.dish .foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.dish .price{font-size:19px;color:var(--ink)}
-.dish .price small{font-size:12px;font-weight:800;color:#9a9d8e;margin-right:2px}
-.qty-add{display:flex;align-items:center;gap:0}
-.add-btn{background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px}
+/* accordion menu */
+.acc{display:grid;gap:14px;margin-top:40px}
+.acc-cat{background:#fff;border:1px solid #e7e8db;border-radius:var(--r-md);overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.acc-cat.open{border-color:var(--ink);box-shadow:0 18px 44px -22px rgba(20,20,20,.25)}
+.acc-head{width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;text-align:left;transition:background .2s;min-height:60px}
+.acc-head:hover{background:#fbfbf4}
+.acc-head h3{font-family:var(--ff-d);font-size:clamp(20px,2.6vw,26px);font-weight:600;flex:1}
+.acc-head .cnt{font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#8b8e7e;background:#f1f2e6;padding:6px 13px;border-radius:999px;flex:none}
+.acc-head .chev{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.22,1,.36,1),background .2s}
+.acc-head .chev svg{width:15px;height:15px;color:var(--lime)}
+.acc-cat.open .acc-head .chev{transform:rotate(180deg);background:var(--orange)}
+.acc-cat.open .acc-head .chev svg{color:#fff}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.22,1,.36,1)}
+.acc-list{padding:2px 10px 14px}
+.meal{border-top:1px solid #f0f1e4;border-radius:12px;transition:background .2s}
+.meal:hover{background:#fbfbf4}
+.meal-row{width:100%;display:flex;align-items:center;gap:14px;padding:15px 14px;text-align:left;min-height:54px}
+.meal-row .nm{font-weight:800;font-size:15.5px;flex:1;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.meal-row .badge{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f7a10;background:rgba(181,211,52,.22);padding:4px 9px;border-radius:999px}
+.meal-row .price{font-family:var(--ff-d);font-weight:700;font-size:17px;color:var(--ink);flex:none}
+.meal-row .price small{font-size:11px;font-weight:800;color:#9a9d8e;margin-right:2px}
+.meal-row .dot-chev{flex:none;width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:#b9bcab;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.meal-row .dot-chev svg{width:14px;height:14px}
+.meal.open .meal-row .dot-chev{transform:rotate(180deg);color:var(--orange)}
+.meal-more{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,1,.36,1)}
+.meal-more-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 14px 16px}
+.meal-more p{font-size:13.8px;color:#77796b;max-width:520px}
+.add-btn{background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px;flex:none}
 .add-btn:hover{transform:scale(1.07);background:#000}
 .add-btn svg{width:14px;height:14px}
-.dish .badge{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f7a10;background:rgba(181,211,52,.22);padding:5px 10px;border-radius:999px;flex:none}
 .empty-note{text-align:center;padding:60px 20px;color:#9a9d8e;font-weight:700;display:none}
 .menu-cta-bar{margin-top:44px;background:var(--ink);color:var(--cream);border-radius:var(--r-lg);padding:30px 34px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
 .menu-cta-bar h3{font-size:26px}
@@ -485,7 +494,7 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
     <div>
       <span class="hero-badge"><span class="dot"></span><span id="heroOpen">Cooking fresh today</span></span>
       <h1>Real Ghanaian flavour, <em>cooked like home<svg viewBox="0 0 200 14" preserveAspectRatio="none" fill="none"><path d="M3 10 C 50 2, 150 2, 197 9" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em> — ready when you are.</h1>
-      <p class="lead">From smoky jollof to banku & grilled tilapia, every plate at Obaapa Essen is cooked fresh at Dansoman Junction. Order ahead online, pay when you pick up — no queue, no stress.</p>
+      <p class="lead">Order before you leave the house, and your food starts cooking while you're still on the road. Walk in, skip the queue, pick up hot — and you don't pay a pesewa until it's in your hands.</p>
       <div class="hero-ctas">
         <a href="#menu" class="btn btn-orange">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -531,7 +540,7 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
   <div class="wrap">
     <div class="rv"><span class="eyebrow">House Favourites</span>
     <h2 class="sec-title">The plates Dansoman<br>talks about</h2>
-    <p class="sec-sub">Start with the three dishes our regulars order again and again. Cooked to order, generous portions, honest prices.</p></div>
+    <p class="sec-sub">If it's your first time, start here — these are the three plates our regulars cross town for and order again the same week. Cooked to order, portions that actually fill you.</p></div>
     <div class="sig-grid">
       <article class="sig-card rv rv-d1">
         <span class="tagpill">Northern Classic</span>
@@ -571,20 +580,19 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
       <div>
         <span class="eyebrow">Full Menu · Order Online</span>
         <h2 class="sec-title">Pick your plate.<br>We'll start cooking.</h2>
-        <p class="sec-sub">Add dishes to your order, check out in one tap, and pay cash or MoMo when you collect at Dansoman Junction.</p>
+        <p class="sec-sub">Tap a category, tap a dish, tap Add — your order lands in our kitchen the moment you send it. You don't pay a pesewa until the food is in your hands.</p>
       </div>
       <div class="menu-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="search" id="menuSearch" placeholder="Search the menu — try 'jollof'…" aria-label="Search menu">
       </div>
     </div>
-    <div class="tabs rv" id="tabs" role="tablist"></div>
-    <div class="dish-grid" id="dishGrid"></div>
+    <div class="acc rv" id="menuAcc"></div>
     <p class="empty-note" id="emptyNote">Nothing matches that search — try another dish name.</p>
     <div class="menu-cta-bar rv">
       <div>
         <h3>Feeding a group?</h3>
-        <p>Family packs and office lunch bundles are cheaper by the bowl — ask us on WhatsApp.</p>
+        <p>Family packs and office bundles cost less per bowl — most offices order once and never go back to solo lunches.</p>
       </div>
       <a class="btn btn-orange" href="https://wa.me/233244216126?text=Hello%20Obaapa%20Essen!%20I%27d%20like%20to%20ask%20about%20group%20and%20family%20pack%20pricing." target="_blank" rel="noopener">Ask About Group Orders</a>
     </div>
@@ -617,13 +625,12 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
 <section id="events">
   <div class="wrap split">
     <div class="ph rv">
-      <img src="assets/flyer.jpg" alt="Obaapa Essen — dine-in, take-out and buffet for events, with our head chef" loading="lazy">
-      <span class="sticker">Buffet for events</span>
+      <img src="assets/buffet-banner.jpg" alt="Obaapa Essen Flavor Burst — jollof, grilled chicken and pasta plated for events" loading="lazy">
     </div>
     <div class="rv rv-d1">
       <span class="eyebrow">Buffet & Event Catering</span>
       <h2 class="sec-title">Your event, catered like family cooked it</h2>
-      <p class="sec-sub" style="margin-bottom:6px">Weddings, funerals, office parties, church programmes — we bring the full Obaapa Essen spread to you, hot and on time.</p>
+      <p class="sec-sub" style="margin-bottom:6px">Weddings, funerals, office parties, church programmes — while you host your guests, we handle every plate. Hot, on time, and seasoned like somebody's mother cooked it. Your only job is accepting the compliments.</p>
       <ul class="check-list">
         <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Local & continental buffet lines, sized from 20 to 500+ guests</li>
         <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Professional service staff, chafing setup and cleanup included</li>
@@ -878,7 +885,7 @@ const MENU = [
   {id:"soft-drink",cat:"Drinks",name:"Soft Drinks",price:10,desc:"Coke, Fanta, Sprite, Malta — chilled."},
   {id:"water",cat:"Drinks",name:"Bottled Water",price:5,desc:"Chilled 750ml bottled water."}
 ];
-const CATS = ["All", ...new Set(MENU.map(m=>m.cat))];
+const CATS = [...new Set(MENU.map(m=>m.cat))];
 const WA_NUMBER = "233244216126";
 const cedi = n => "GH₵ " + n.toLocaleString("en-GH");
 
@@ -887,36 +894,74 @@ let cart = {};
 try{ cart = JSON.parse(localStorage.getItem("oe-cart")||"{}"); }catch(e){ cart={}; }
 const saveCart = () => localStorage.setItem("oe-cart", JSON.stringify(cart));
 
-/* ============ MENU RENDER ============ */
-const tabsEl = document.getElementById("tabs");
-const gridEl = document.getElementById("dishGrid");
+/* ============ ACCORDION MENU ============ */
+const accEl = document.getElementById("menuAcc");
 const emptyEl = document.getElementById("emptyNote");
-let activeCat = "All", query = "";
+let query = "";
 
-CATS.forEach(c=>{
-  const b=document.createElement("button");
-  b.className="tab"+(c==="All"?" on":"");
-  b.textContent=c; b.setAttribute("role","tab");
-  b.onclick=()=>{activeCat=c;document.querySelectorAll(".tab").forEach(t=>t.classList.remove("on"));b.classList.add("on");renderMenu();};
-  tabsEl.appendChild(b);
-});
-
-function renderMenu(){
-  const q=query.trim().toLowerCase();
-  const list=MENU.filter(m=>(activeCat==="All"||m.cat===activeCat)&&(!q||m.name.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q)));
-  gridEl.innerHTML=list.map(m=>`
-    <article class="dish">
-      <div class="top"><h4>${m.name}</h4>${m.badge?`<span class="badge">${m.badge}</span>`:""}</div>
-      <p class="desc">${m.desc}</p>
-      <div class="foot">
-        <span class="price"><small>GH₵</small>${m.price}</span>
+function mealRow(m){
+  return `<div class="meal" data-meal="${m.id}">
+    <button class="meal-row" data-meal-toggle="${m.id}" aria-expanded="false" aria-label="Show details for ${m.name}">
+      <span class="nm">${m.name}${m.badge?`<span class="badge">${m.badge}</span>`:""}</span>
+      <span class="price"><small>GH₵</small>${m.price}</span>
+      <span class="dot-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="meal-more">
+      <div class="meal-more-in">
+        <p>${m.desc}</p>
         <button class="add-btn" data-add="${m.id}" aria-label="Add ${m.name} to order">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>Add
         </button>
       </div>
-    </article>`).join("");
-  emptyEl.style.display=list.length?"none":"block";
+    </div>
+  </div>`;
 }
+function renderMenu(){
+  const q=query.trim().toLowerCase();
+  const match=m=>!q||m.name.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q);
+  let any=false;
+  accEl.innerHTML=CATS.map((c,i)=>{
+    const items=MENU.filter(m=>m.cat===c&&match(m));
+    if(!items.length)return"";
+    any=true;
+    const open=q?true:i===0; // searching auto-opens matches; else first category open
+    return `<div class="acc-cat${open?" open":""}" data-cat="${c}">
+      <button class="acc-head" data-cat-toggle="${c}" aria-expanded="${open}">
+        <h3>${c}</h3>
+        <span class="cnt">${items.length} dishes</span>
+        <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="acc-body"><div class="acc-list">${items.map(mealRow).join("")}</div></div>
+    </div>`;
+  }).join("");
+  emptyEl.style.display=any?"none":"block";
+  accEl.querySelectorAll(".acc-cat.open .acc-body").forEach(b=>b.style.maxHeight=b.scrollHeight+"px");
+}
+function setAccHeight(cat){
+  const body=cat.querySelector(".acc-body");
+  body.style.maxHeight=cat.classList.contains("open")?body.scrollHeight+"px":"0px";
+}
+document.addEventListener("click",e=>{
+  const ct=e.target.closest("[data-cat-toggle]");
+  if(ct){
+    const cat=ct.closest(".acc-cat");
+    cat.classList.toggle("open");
+    ct.setAttribute("aria-expanded",cat.classList.contains("open"));
+    setAccHeight(cat);
+    return;
+  }
+  const mt=e.target.closest("[data-meal-toggle]");
+  if(mt){
+    const meal=mt.closest(".meal"),more=meal.querySelector(".meal-more");
+    meal.classList.toggle("open");
+    mt.setAttribute("aria-expanded",meal.classList.contains("open"));
+    more.style.maxHeight=meal.classList.contains("open")?more.scrollHeight+"px":"0px";
+    // grow parent accordion to fit
+    const cat=meal.closest(".acc-cat"),body=cat.querySelector(".acc-body");
+    body.style.maxHeight=(body.scrollHeight+(meal.classList.contains("open")?more.scrollHeight:0))+"px";
+    return;
+  }
+});
 renderMenu();
 document.getElementById("menuSearch").addEventListener("input",e=>{query=e.target.value;renderMenu();});
 
