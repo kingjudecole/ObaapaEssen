@@ -239,7 +239,29 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .acc-cat.open{border-color:var(--ink);box-shadow:0 18px 44px -22px rgba(20,20,20,.25)}
 .acc-head{width:100%;display:flex;align-items:center;gap:16px;padding:22px 24px;text-align:left;transition:background .2s;min-height:60px}
 .acc-head:hover{background:#fbfbf4}
-.acc-head h3{font-family:var(--ff-d);font-size:clamp(20px,2.6vw,26px);font-weight:600;flex:1}
+.acc-head .tt{flex:1;display:flex;flex-direction:column;gap:2px}
+.acc-head h3{font-family:var(--ff-d);font-size:clamp(20px,2.6vw,26px);font-weight:600}
+.acc-head .sub{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a3a695}
+/* staggered unfold */
+.acc-body .meal{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1),background .2s}
+.acc-cat.open .acc-body .meal{opacity:1;transform:none}
+.acc-cat.open .acc-body .meal:nth-child(1){transition-delay:.10s}
+.acc-cat.open .acc-body .meal:nth-child(2){transition-delay:.14s}
+.acc-cat.open .acc-body .meal:nth-child(3){transition-delay:.18s}
+.acc-cat.open .acc-body .meal:nth-child(4){transition-delay:.22s}
+.acc-cat.open .acc-body .meal:nth-child(5){transition-delay:.26s}
+.acc-cat.open .acc-body .meal:nth-child(6){transition-delay:.30s}
+.acc-cat.open .acc-body .meal:nth-child(n+7){transition-delay:.34s}
+/* cursor-tracking image reveal */
+.hover-card{position:fixed;top:0;left:0;width:230px;aspect-ratio:1;border-radius:20px;overflow:hidden;pointer-events:none;z-index:105;opacity:0;transform:scale(.86);transition:opacity .28s cubic-bezier(.22,1,.36,1);box-shadow:0 30px 70px -20px rgba(0,0,0,.55),0 0 0 1.5px rgba(181,211,52,.45);background:#191b15;will-change:transform,opacity}
+.hover-card.on{opacity:1}
+.hover-card img{width:100%;height:100%;object-fit:cover}
+.hover-card .hc-price{position:absolute;bottom:12px;right:12px;background:rgba(12,13,10,.78);backdrop-filter:blur(8px);color:var(--lime);font-family:var(--ff-d);font-weight:700;font-size:16px;padding:7px 14px;border-radius:999px;border:1px solid rgba(181,211,52,.35)}
+@media (hover:none),(pointer:coarse){.hover-card{display:none}}
+/* thumbnail in expanded meal (mobile + desktop) */
+.meal-more-in{display:flex;align-items:center;gap:16px;padding:0 14px 16px}
+.meal-thumb{flex:none;width:72px;height:72px;border-radius:14px;object-fit:cover;box-shadow:0 8px 20px -8px rgba(20,20,20,.35)}
+.meal-more p{font-size:13.8px;color:#77796b;flex:1}
 .acc-head .cnt{font-size:12.5px;font-weight:800;letter-spacing:.06em;color:#8b8e7e;background:#f1f2e6;padding:6px 13px;border-radius:999px;flex:none}
 .acc-head .chev{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.22,1,.36,1),background .2s}
 .acc-head .chev svg{width:15px;height:15px;color:var(--lime)}
@@ -258,8 +280,6 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .meal-row .dot-chev svg{width:14px;height:14px}
 .meal.open .meal-row .dot-chev{transform:rotate(180deg);color:var(--orange)}
 .meal-more{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,1,.36,1)}
-.meal-more-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 14px 16px}
-.meal-more p{font-size:13.8px;color:#77796b;max-width:520px}
 .add-btn{background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px;flex:none}
 .add-btn:hover{transform:scale(1.07);background:#000}
 .add-btn svg{width:14px;height:14px}
@@ -846,44 +866,46 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
 
 <script>
 /* ============ MENU DATA — edit prices & dishes here ============ */
+const CAT_META = {
+  "Local Favorites":"Authentic Ghanaian Heritage",
+  "Rice & Grills":"Charcoal Flavors & Seasoned Grains",
+  "Continental":"Global Favorites & Pasta",
+  "Sides & Extras":"Complement Your Feast",
+  "Drinks & Refreshments":"Chilled Juices & Local Brews"
+};
 const MENU = [
-  // Local favourites
-  {id:"jollof-chicken",cat:"Local Favourites",name:"Party Jollof & Grilled Chicken",price:65,desc:"Smoky party-style jollof with juicy grilled chicken, salad and shito.",badge:"Bestseller"},
-  {id:"jollof-beef",cat:"Local Favourites",name:"Jollof & Beef",price:70,desc:"Our signature jollof with tender stewed beef chunks."},
-  {id:"waakye-special",cat:"Local Favourites",name:"Waakye Special",price:55,desc:"Rice & beans with gari, spaghetti, egg, fried fish, wele and shito.",badge:"Saturday Fave"},
-  {id:"banku-tilapia",cat:"Local Favourites",name:"Banku & Grilled Tilapia",price:95,desc:"Whole char-grilled tilapia with soft banku and fresh pepper.",badge:"Chef's Pride"},
-  {id:"banku-okro",cat:"Local Favourites",name:"Banku & Okro Stew",price:60,desc:"Rich okro stew loaded with assorted meat and smoked fish."},
-  {id:"fufu-goat",cat:"Local Favourites",name:"Fufuo & Goat Meat Soup",price:80,desc:"Pounded fufuo in hot, spicy soup with tender goat meat.",badge:"Signature"},
-  {id:"tuo-zaafi",cat:"Local Favourites",name:"Tuo Zaafi (T.Z.)",price:60,desc:"Northern classic — smooth T.Z. in green ayoyo soup with tender meat.",badge:"Signature"},
-  {id:"fufu-chicken",cat:"Local Favourites",name:"Fufu & Chicken Soup",price:70,desc:"Classic comfort — fufu with free-range chicken light soup."},
-  {id:"kenkey-fish",cat:"Local Favourites",name:"Kenkey & Fried Fish",price:50,desc:"Ga kenkey with crispy fried fish, ground pepper and shito."},
-  {id:"omo-tuo",cat:"Local Favourites",name:"Omo Tuo & Groundnut Soup",price:65,desc:"Soft rice balls in creamy groundnut soup (Sundays)."},
-  {id:"red-red",cat:"Local Favourites",name:"Red Red & Plantain",price:45,desc:"Bean stew in palm oil with sweet fried plantain."},
-  // Rice & grills
-  {id:"fried-rice-chicken",cat:"Rice & Grills",name:"Assorted Fried Rice & Chicken",price:70,desc:"Wok-fried rice with veggies, sausage and crispy fried chicken."},
-  {id:"plain-rice-stew",cat:"Rice & Grills",name:"Plain Rice & Tomato Stew",price:45,desc:"Steamed rice with rich tomato stew — add chicken, beef or fish."},
-  {id:"grilled-chicken-chips",cat:"Rice & Grills",name:"Half Grilled Chicken & Chips",price:75,desc:"Marinated half chicken off the grill with golden fries and coleslaw."},
-  {id:"chicken-wings",cat:"Rice & Grills",name:"Spicy Grilled Wings (6pcs)",price:55,desc:"Sticky, spicy wings with our house pepper glaze."},
-  {id:"beef-kebab",cat:"Rice & Grills",name:"Beef Khebab Skewers (3)",price:40,desc:"Street-style suya-spiced beef skewers, grilled to order."},
-  {id:"gizzard-kebab",cat:"Rice & Grills",name:"Gizzard Khebab Skewers (3)",price:35,desc:"Tender spiced gizzard skewers with onions and pepper."},
+  // Local Favorites
+  {id:"fufu-goat",cat:"Local Favorites",name:"Fufu with Goat Light Soup",price:80,desc:"Pounded cassava & plantain in rich goat light soup.",badge:"Signature",img:"assets/fufuo.jpg"},
+  {id:"waakye-special",cat:"Local Favorites",name:"Waakye Special Platter",price:55,desc:"Rice & beans with shito, spaghetti, egg & fish.",badge:"Signature",img:"assets/waakye.jpg"},
+  {id:"tuo-zaafi",cat:"Local Favorites",name:"Tuo Zaafi with Ayoyo Stew",price:60,desc:"Northern staple served with green ayoyo & meat stew.",badge:"Signature",img:"assets/tuo-zaafi.jpg"},
+  {id:"banku-tilapia",cat:"Local Favorites",name:"Banku with Fresh Tilapia",price:95,desc:"Fermented corn/cassava dough with grilled tilapia & hot pepper.",img:"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80"},
+  {id:"fufu-abunuabunu",cat:"Local Favorites",name:"Fufu with Abunuabunu",price:75,desc:"Freshly pounded fufu served in traditional green soup.",img:"https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=80"},
+  {id:"jollof-chicken",cat:"Local Favorites",name:"Jollof Rice & Smoked Chicken",price:65,desc:"Classic Ghanaian smoked jollof with grilled chicken.",img:"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"},
+  // Rice & Grills
+  {id:"jollof-grill",cat:"Rice & Grills",name:"Signature Jollof & Grilled Chicken",price:70,desc:"Rich tomato-infused rice with spiced charcoal chicken.",img:"https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80"},
+  {id:"fried-rice-prawns",cat:"Rice & Grills",name:"Fried Rice with Spicy Prawns",price:85,desc:"Wok-tossed rice topped with seasoned chili prawns.",img:"https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"},
+  {id:"assorted-waakye",cat:"Rice & Grills",name:"Assorted Meat Waakye",price:70,desc:"Waakye loaded with wele, beef, fried fish & egg.",img:"assets/waakye.jpg"},
+  {id:"charcoal-tilapia",cat:"Rice & Grills",name:"Grilled Charcoal Tilapia",price:90,desc:"Whole tilapia marinated in ginger, garlic & local spices.",img:"https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80"},
+  {id:"suya-skewers",cat:"Rice & Grills",name:"Spicy Suya Beef Skewers",price:40,desc:"Thinly sliced beef coated in peanut suya spice mix.",img:"https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80"},
+  {id:"coconut-rice-curry",cat:"Rice & Grills",name:"Coconut Rice & Fish Curry",price:75,desc:"Fragrant coconut-infused rice with savory red fish curry.",img:"https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&w=800&q=80"},
   // Continental
-  {id:"spaghetti-bolognese",cat:"Continental",name:"Spaghetti Bolognese",price:65,desc:"Slow-simmered minced beef ragù over al-dente spaghetti."},
-  {id:"club-sandwich",cat:"Continental",name:"Chicken Club Sandwich",price:55,desc:"Triple-decker with grilled chicken, egg, veggies and fries."},
-  {id:"beef-burger",cat:"Continental",name:"House Beef Burger",price:60,desc:"Juicy hand-pressed patty, cheese, house sauce and fries."},
-  {id:"fish-chips",cat:"Continental",name:"Fish & Chips",price:70,desc:"Golden battered fish fillet with fries and tartar sauce."},
-  {id:"chicken-salad",cat:"Continental",name:"Grilled Chicken Salad",price:50,desc:"Fresh greens, grilled chicken strips and citrus dressing."},
-  {id:"omelette-bread",cat:"Continental",name:"Spanish Omelette & Toast",price:35,desc:"Fluffy loaded omelette with buttered toast (till 11am)."},
-  // Sides & extras
-  {id:"kelewele",cat:"Sides & Extras",name:"Kelewele",price:25,desc:"Spiced, gingered fried plantain cubes — dangerously addictive.",badge:"Must Try"},
-  {id:"spring-rolls",cat:"Sides & Extras",name:"Spring Rolls (4)",price:35,desc:"Crispy vegetable spring rolls with sweet chilli dip."},
-  {id:"fries",cat:"Sides & Extras",name:"French Fries",price:25,desc:"Golden, salted, hot out of the fryer."},
-  {id:"coleslaw",cat:"Sides & Extras",name:"Fresh Coleslaw",price:15,desc:"Creamy cabbage & carrot slaw."},
-  {id:"extra-shito",cat:"Sides & Extras",name:"Extra Shito",price:10,desc:"Our legendary house black pepper sauce. Take some home."},
-  // Drinks
-  {id:"sobolo",cat:"Drinks",name:"Chilled Sobolo",price:15,desc:"House-brewed hibiscus drink with ginger and pineapple.",badge:"House Made"},
-  {id:"asana",cat:"Drinks",name:"Fresh Fruit Juice",price:25,desc:"Pineapple, watermelon or mixed — squeezed daily."},
-  {id:"soft-drink",cat:"Drinks",name:"Soft Drinks",price:10,desc:"Coke, Fanta, Sprite, Malta — chilled."},
-  {id:"water",cat:"Drinks",name:"Bottled Water",price:5,desc:"Chilled 750ml bottled water."}
+  {id:"seafood-pasta",cat:"Continental",name:"Creamy Seafood Pasta",price:95,desc:"Penne pasta in garlic cream sauce with prawns & calamari.",img:"https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80"},
+  {id:"tenderloin-steak",cat:"Continental",name:"Grilled Tenderloin Steak",price:120,desc:"Prime beef cut served with herb butter & potato wedges.",img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"},
+  {id:"wings-platter",cat:"Continental",name:"Crispy Chicken Wings Platter",price:65,desc:"8-piece wings tossed in sweet chili or spicy BBQ.",img:"https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80"},
+  {id:"club-sandwich",cat:"Continental",name:"Classic Club Sandwich & Fries",price:55,desc:"Triple-decker chicken, egg, cheese & tomato sandwich.",img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"},
+  {id:"grilled-salmon",cat:"Continental",name:"Grilled Salmon with Steamed Veggies",price:140,desc:"Pan-seared salmon fillet with lemon butter drizzle.",img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80"},
+  {id:"beef-burger",cat:"Continental",name:"Gourmet Beef Burger",price:60,desc:"Handcrafted patty with caramelized onions & cheddar.",img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"},
+  // Sides & Extras
+  {id:"kelewele",cat:"Sides & Extras",name:"Extra Fried Plantain (Kelewele)",price:25,desc:"Spiced ginger fried plantain cubes.",badge:"Must Try",img:"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80"},
+  {id:"extra-protein",cat:"Sides & Extras",name:"Extra Meat / Fish Portion",price:25,desc:"Add goat, beef, chicken, or tilapia to any meal.",img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"},
+  {id:"egg-gari",cat:"Sides & Extras",name:"Boiled Egg & Gari Fortifier",price:15,desc:"Hard-boiled egg with seasoned roasted gari.",img:"https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80"},
+  {id:"extra-fufu",cat:"Sides & Extras",name:"Extra Fufu Portion",price:15,desc:"Freshly pounded cassava and plantain ball.",img:"assets/fufuo.jpg"},
+  {id:"steamed-rice",cat:"Sides & Extras",name:"Steamed White Rice",price:20,desc:"Long-grain jasmine white rice.",img:"https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?auto=format&fit=crop&w=800&q=80"},
+  // Drinks & Refreshments
+  {id:"sobolo",cat:"Drinks & Refreshments",name:"Fresh Hibiscus (Bissap) Juice",price:15,desc:"Chilled organic hibiscus infused with clove & mint.",badge:"House Made",img:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"},
+  {id:"pineapple-ginger",cat:"Drinks & Refreshments",name:"Fresh Pineapple & Ginger Juice",price:25,desc:"100% freshly pressed local pineapple with ginger kick.",img:"https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&w=800&q=80"},
+  {id:"soft-drink",cat:"Drinks & Refreshments",name:"Ice-Cold Malt / Soft Drinks",price:12,desc:"Assorted chilled canned malts and sodas.",img:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80"},
+  {id:"water",cat:"Drinks & Refreshments",name:"Premium Bottled Water",price:5,desc:"Chilled natural mineral spring water.",img:"https://images.unsplash.com/photo-1560023907-5f339617ea30?auto=format&fit=crop&w=800&q=80"}
 ];
 const CATS = [...new Set(MENU.map(m=>m.cat))];
 const WA_NUMBER = "233244216126";
@@ -900,7 +922,7 @@ const emptyEl = document.getElementById("emptyNote");
 let query = "";
 
 function mealRow(m){
-  return `<div class="meal" data-meal="${m.id}">
+  return `<div class="meal" data-meal="${m.id}" data-img="${m.img||""}" data-price="${m.price}">
     <button class="meal-row" data-meal-toggle="${m.id}" aria-expanded="false" aria-label="Show details for ${m.name}">
       <span class="nm">${m.name}${m.badge?`<span class="badge">${m.badge}</span>`:""}</span>
       <span class="price"><small>GH₵</small>${m.price}</span>
@@ -908,6 +930,7 @@ function mealRow(m){
     </button>
     <div class="meal-more">
       <div class="meal-more-in">
+        ${m.img?`<img class="meal-thumb" src="${m.img}" alt="${m.name}" loading="lazy">`:""}
         <p>${m.desc}</p>
         <button class="add-btn" data-add="${m.id}" aria-label="Add ${m.name} to order">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>Add
@@ -927,8 +950,8 @@ function renderMenu(){
     const open=q?true:i===0; // searching auto-opens matches; else first category open
     return `<div class="acc-cat${open?" open":""}" data-cat="${c}">
       <button class="acc-head" data-cat-toggle="${c}" aria-expanded="${open}">
-        <h3>${c}</h3>
-        <span class="cnt">${items.length} dishes</span>
+        <span class="tt"><h3>${c}</h3><span class="sub">${CAT_META[c]||""}</span></span>
+        <span class="cnt">${items.length} Items</span>
         <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 9l6 6 6-6"/></svg></span>
       </button>
       <div class="acc-body"><div class="acc-list">${items.map(mealRow).join("")}</div></div>
@@ -964,6 +987,41 @@ document.addEventListener("click",e=>{
 });
 renderMenu();
 document.getElementById("menuSearch").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+
+/* ============ CURSOR-TRACKING IMAGE REVEAL (spring physics, 60fps) ============ */
+(function(){
+  if(!matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+  const card=document.createElement("div");
+  card.className="hover-card";
+  card.innerHTML=`<img alt=""><span class="hc-price"></span>`;
+  document.body.appendChild(card);
+  const imgEl=card.querySelector("img"),priceEl=card.querySelector(".hc-price");
+  // spring state: position + velocity (stiffness/damping ≈ framer spring 200/20)
+  let tx=innerWidth/2,ty=innerHeight/2,x=tx,y=ty,vx=0,vy=0,px=x,active=false,raf=null;
+  const K=0.16,D=0.72; // stiffness, damping (per-frame integration)
+  function loop(){
+    vx=(vx+(tx-x)*K)*D; vy=(vy+(ty-y)*K)*D;
+    x+=vx; y+=vy;
+    const rot=Math.max(-9,Math.min(9,(x-px)*0.35)); px=x;
+    const s=active?1:.86;
+    card.style.transform=`translate(${x+22}px,${y-115}px) rotate(${rot}deg) scale(${s})`;
+    raf=requestAnimationFrame(loop);
+  }
+  addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;},{passive:true});
+  document.addEventListener("mouseover",e=>{
+    const meal=e.target.closest(".meal");
+    const inMenu=e.target.closest("#menuAcc");
+    if(meal&&meal.dataset.img){
+      if(imgEl.getAttribute("src")!==meal.dataset.img)imgEl.src=meal.dataset.img;
+      priceEl.textContent="GH₵ "+meal.dataset.price;
+      active=true;card.classList.add("on");
+      if(!raf)raf=requestAnimationFrame(loop);
+    }else if(!inMenu&&active){
+      active=false;card.classList.remove("on");
+    }
+  });
+  accEl.addEventListener("mouseleave",()=>{active=false;card.classList.remove("on");});
+})();
 
 /* ============ CART ============ */
 const drawer=document.getElementById("drawer"),overlay=document.getElementById("overlay"),
