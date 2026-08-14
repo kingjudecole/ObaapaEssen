@@ -376,6 +376,23 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
 @media(max-width:960px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
 
+/* ---------- cinematic page-switch curtain ---------- */
+.curtain{position:fixed;inset:0;z-index:200;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.curtain.in{opacity:1;pointer-events:auto}
+.curtain.out{opacity:1;transform:translateY(-100%);transition:transform .3s cubic-bezier(.76,0,.24,1)}
+.curtain-logo{font-family:var(--ff-d);font-weight:600;font-size:clamp(26px,5.4vw,54px);text-transform:uppercase;white-space:nowrap;background:linear-gradient(90deg,var(--lime-bright),var(--gold),#f5e04a,var(--gold),var(--lime-bright));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em;opacity:0;transition:letter-spacing .8s cubic-bezier(.22,1,.36,1),opacity .8s ease;animation:shimmer 1.3s linear infinite}
+.curtain.in .curtain-logo{letter-spacing:.15em;opacity:1}
+@keyframes shimmer{to{background-position:220% 0}}
+
+/* ---------- mobile scroll-triggered dish preview ---------- */
+.scroll-preview{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom));transform:translate(-50%,20px) scale(.92);z-index:75;display:flex;align-items:center;gap:12px;background:rgba(12,13,10,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(181,211,52,.35);border-radius:18px;padding:10px 16px 10px 10px;box-shadow:0 22px 50px -16px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .35s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1);max-width:88vw}
+.scroll-preview.on{opacity:1;transform:translate(-50%,0) scale(1)}
+.scroll-preview img{width:58px;height:58px;border-radius:12px;object-fit:cover;flex:none}
+.scroll-preview .sp-txt{min-width:0}
+.scroll-preview .sp-nm{color:var(--cream);font-weight:800;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scroll-preview .sp-pr{color:var(--lime);font-family:var(--ff-d);font-weight:700;font-size:15px}
+@media (hover:hover) and (pointer:fine){.scroll-preview{display:none}}
+
 /* ---------- cart drawer ---------- */
 .overlay{position:fixed;inset:0;background:rgba(10,10,8,.6);backdrop-filter:blur(3px);z-index:90;opacity:0;pointer-events:none;transition:opacity .35s}
 .overlay.show{opacity:1;pointer-events:auto}
@@ -968,9 +985,19 @@ document.addEventListener("click",e=>{
   const ct=e.target.closest("[data-cat-toggle]");
   if(ct){
     const cat=ct.closest(".acc-cat");
+    const opening=!cat.classList.contains("open");
+    if(opening){ // exclusive single-active rule: auto-collapse the rest
+      accEl.querySelectorAll(".acc-cat.open").forEach(o=>{
+        if(o===cat)return;
+        o.classList.remove("open");
+        o.querySelector(".acc-head").setAttribute("aria-expanded","false");
+        setAccHeight(o);
+      });
+    }
     cat.classList.toggle("open");
     ct.setAttribute("aria-expanded",cat.classList.contains("open"));
     setAccHeight(cat);
+    if(opening)setTimeout(()=>{const r=cat.getBoundingClientRect();if(r.top<70)scrollBy({top:r.top-80,behavior:"smooth"});},320);
     return;
   }
   const mt=e.target.closest("[data-meal-toggle]");
@@ -986,7 +1013,7 @@ document.addEventListener("click",e=>{
   }
 });
 renderMenu();
-document.getElementById("menuSearch").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+document.getElementById("menuSearch").addEventListener("input",e=>{query=e.target.value;renderMenu();if(window.observeMeals)observeMeals();});
 
 /* ============ CURSOR-TRACKING IMAGE REVEAL (spring physics, 60fps) ============ */
 (function(){
@@ -1176,6 +1203,78 @@ stars.forEach(b=>b.onclick=()=>{
 });
 
 document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* ============ CINEMATIC PAGE-SWITCH CURTAIN ============ */
+(function(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const curtain=document.createElement("div");
+  curtain.className="curtain";curtain.setAttribute("aria-hidden","true");
+  curtain.innerHTML=`<span class="curtain-logo">Obaapa Essen</span>`;
+  document.body.appendChild(curtain);
+  let busy=false;
+  document.addEventListener("click",e=>{
+    const a=e.target.closest('a[href^="#"]');
+    if(!a||busy)return;
+    const id=a.getAttribute("href");
+    if(id.length<2)return;
+    const target=document.querySelector(id);
+    if(!target)return;
+    e.preventDefault();
+    if(mMenu.classList.contains("open")){mMenu.classList.remove("open");burger.classList.remove("open");document.body.style.overflow="";}
+    if(reduce){target.scrollIntoView();history.pushState(null,"",id);return;}
+    busy=true;
+    document.body.style.overflow="hidden";
+    curtain.classList.add("in");                              // Phase 1: 0–0.2s black snap
+    setTimeout(()=>{                                          // Phase 2: under the veil
+      window.scrollTo({top:target.getBoundingClientRect().top+scrollY-60,behavior:"instant"});
+      history.pushState(null,"",id);
+    },250);
+    setTimeout(()=>{                                          // Phase 3: 1.0s → curtain lifts
+      curtain.classList.add("out");
+      document.body.style.overflow="";
+      setTimeout(()=>{curtain.classList.remove("in","out");busy=false;},320);
+    },1000);
+  },true);
+})();
+
+/* ============ MOBILE 50%-THRESHOLD SCROLL DISH PREVIEW ============ */
+(function(){
+  if(matchMedia("(hover:hover) and (pointer:fine)").matches)return;
+  const sp=document.createElement("div");
+  sp.className="scroll-preview";sp.setAttribute("aria-hidden","true");
+  sp.innerHTML=`<img alt=""><div class="sp-txt"><div class="sp-nm"></div><div class="sp-pr"></div></div>`;
+  document.body.appendChild(sp);
+  const img=sp.querySelector("img"),nm=sp.querySelector(".sp-nm"),pr=sp.querySelector(".sp-pr");
+  let current=null,hideTimer=null;
+  const show=meal=>{
+    const m=MENU.find(x=>x.id===meal.dataset.meal);
+    if(!m||!m.img)return;
+    if(current===m.id)return;
+    current=m.id;
+    img.src=m.img;nm.textContent=m.name;pr.textContent=cedi(m.price);
+    sp.classList.add("on");
+    clearTimeout(hideTimer);
+  };
+  const io=new IntersectionObserver(entries=>{
+    // pick the entry closest to viewport centre among intersecting ones
+    const vis=entries.filter(en=>en.isIntersecting);
+    if(vis.length){
+      const mid=innerHeight/2;
+      vis.sort((a,b)=>Math.abs(a.boundingClientRect.top+a.boundingClientRect.height/2-mid)-Math.abs(b.boundingClientRect.top+b.boundingClientRect.height/2-mid));
+      show(vis[0].target);
+    }else{
+      // nothing centred → fade out shortly
+      clearTimeout(hideTimer);
+      hideTimer=setTimeout(()=>{sp.classList.remove("on");current=null;},350);
+    }
+  },{rootMargin:"-25% 0px -25% 0px",threshold:.5}); // central 50% band of the viewport
+  window.observeMeals=()=>{accEl.querySelectorAll(".meal").forEach(m=>io.observe(m));};
+  observeMeals();
+  // hide when the whole menu section leaves view or drawer opens
+  new IntersectionObserver(es=>{es.forEach(en=>{if(!en.isIntersecting){sp.classList.remove("on");current=null;}});}).observe(document.getElementById("menu"));
+  document.getElementById("cartOpen").addEventListener("click",()=>sp.classList.remove("on"));
+  document.getElementById("bnCart").addEventListener("click",()=>sp.classList.remove("on"));
+})();
 </script>
 </body>
 </html>
