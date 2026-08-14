@@ -44,6 +44,8 @@
   --ink-3:#262922;
   --lime:#b5d334;
   --lime-bright:#cdea3a;
+  --orange:#f97316;
+  --orange-bright:#fb8c33;
   --gold:#d4cc1f;
   --cream:#f7f6ef;
   --paper:#fffef8;
@@ -81,8 +83,8 @@ section{padding:96px 0}
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:15px;padding:16px 30px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s,background .22s,color .22s;letter-spacing:.01em;min-height:48px}
 .btn svg{width:18px;height:18px;flex:none}
-.btn-lime{background:var(--lime);color:var(--ink)}
-.btn-lime:hover{background:var(--lime-bright);transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px -10px rgba(181,211,52,.5)}
+.btn-lime{background:var(--orange);color:#fff}
+.btn-lime:hover{background:var(--orange-bright);transform:translateY(-3px) scale(1.02);box-shadow:0 14px 34px -10px rgba(249,115,22,.55)}
 .btn-ghost{border:2px solid rgba(247,246,239,.28);color:var(--cream)}
 .btn-ghost:hover{border-color:var(--lime);color:var(--lime);transform:translateY(-3px)}
 .btn-dark{background:var(--ink);color:var(--cream)}
@@ -110,9 +112,9 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav-cta{display:flex;align-items:center;gap:12px}
 .nav-phone{display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px;color:var(--lime)}
-.cart-btn{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--lime);color:var(--ink);font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
-.cart-btn:hover{background:var(--lime-bright);transform:translateY(-2px)}
-.cart-count{position:absolute;top:-7px;right:-7px;background:var(--ink);color:var(--lime);border:2px solid var(--lime);font-size:11px;font-weight:800;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.cart-btn{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:#fff;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
+.cart-btn:hover{background:var(--orange-bright);transform:translateY(-2px)}
+.cart-count{position:absolute;top:-7px;right:-7px;background:var(--ink);color:var(--orange);border:2px solid var(--orange);font-size:11px;font-weight:800;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
 .cart-count.pop{transform:scale(1.35)}
 .burger{display:none;flex-direction:column;gap:5px;padding:10px;min-width:44px;min-height:44px;justify-content:center;align-items:center}
 .burger span{width:24px;height:2.5px;background:var(--cream);border-radius:3px;transition:transform .3s,opacity .3s}
@@ -131,6 +133,22 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .m-menu a svg{width:22px;height:22px;color:var(--lime)}
 .m-menu .m-contact{margin-top:26px;display:flex;gap:12px;opacity:0;transition:opacity .4s .3s}
 .m-menu.open .m-contact{opacity:1}
+
+/* ---------- welcome video hero ---------- */
+.welcome{position:relative;height:100svh;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--ink)}
+.welcome video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.welcome::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,12,.55) 0%,rgba(14,15,12,.35) 45%,rgba(20,20,20,.92) 100%)}
+.welcome-in{position:relative;z-index:2;text-align:center;padding:0 6%}
+.welcome .kicker{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:var(--lime);margin-bottom:22px;animation:fadeup 1.2s cubic-bezier(.22,1,.36,1) both}
+.welcome h1{font-size:clamp(46px,9vw,110px);font-weight:600;color:var(--cream);animation:fadeup 1.2s .15s cubic-bezier(.22,1,.36,1) both}
+.welcome h1 .glow{display:block;font-style:italic;font-weight:500;color:var(--lime-bright);animation:textglow 2.8s ease-in-out infinite}
+@keyframes textglow{
+  0%,100%{text-shadow:0 0 12px rgba(205,234,58,.45),0 0 34px rgba(181,211,52,.35),0 0 70px rgba(249,115,22,.25)}
+  50%{text-shadow:0 0 26px rgba(205,234,58,.85),0 0 70px rgba(181,211,52,.6),0 0 120px rgba(249,115,22,.45)}
+}
+.welcome .w-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#c9ccbe;font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;animation:fadeup 1.2s .5s both}
+.welcome .w-scroll .wheel{width:22px;height:36px;border:2px solid rgba(247,246,239,.5);border-radius:12px;position:relative}
+.welcome .w-scroll .wheel::after{content:"";position:absolute;left:50%;top:6px;width:4px;height:8px;background:var(--orange);border-radius:3px;transform:translateX(-50%);animation:wheel 1.8s ease-in-out infinite}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;padding:70px 0 90px}
@@ -198,8 +216,8 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .sig-card p{color:var(--mut);font-size:14.5px;margin-bottom:16px}
 .sig-card .row{display:flex;align-items:center;justify-content:space-between}
 .price{font-family:var(--ff-d);font-weight:700;font-size:21px;color:var(--lime)}
-.add-mini{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);font-weight:800;font-size:13.5px;padding:10px 18px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
-.add-mini:hover{background:var(--lime-bright);transform:scale(1.06)}
+.add-mini{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;font-weight:800;font-size:13.5px;padding:10px 18px;border-radius:999px;transition:transform .22s cubic-bezier(.34,1.56,.64,1),background .2s}
+.add-mini:hover{background:var(--orange-bright);transform:scale(1.06)}
 .tagpill{position:absolute;top:16px;left:16px;background:var(--ink);color:var(--lime);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1px solid rgba(181,211,52,.4)}
 @media(max-width:900px){.sig-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
 
@@ -230,8 +248,8 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(20,20,20,.92
 .dish .price{font-size:19px;color:var(--ink)}
 .dish .price small{font-size:12px;font-weight:800;color:#9a9d8e;margin-right:2px}
 .qty-add{display:flex;align-items:center;gap:0}
-.add-btn{background:var(--ink);color:var(--lime);font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px}
-.add-btn:hover{transform:scale(1.07);background:#000}
+.add-btn{background:var(--orange);color:#fff;font-weight:800;font-size:13px;padding:10px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .2s;min-height:40px}
+.add-btn:hover{transform:scale(1.07);background:var(--orange-bright)}
 .add-btn svg{width:14px;height:14px}
 .dish .badge{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f7a10;background:rgba(181,211,52,.22);padding:5px 10px;border-radius:999px;flex:none}
 .empty-note{text-align:center;padding:60px 20px;color:#9a9d8e;font-weight:700;display:none}
@@ -445,8 +463,20 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
   </div>
 </div>
 
+<!-- welcome video hero -->
+<section class="welcome" id="top">
+  <video autoplay muted loop playsinline poster="assets/waakye.jpg" aria-hidden="true">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="welcome-in">
+    <span class="kicker">Local & Continental Restaurant · Accra</span>
+    <h1>Welcome to <span class="glow">Obaapa Essen</span></h1>
+  </div>
+  <div class="w-scroll" aria-hidden="true"><div class="wheel"></div>Scroll</div>
+</section>
+
 <!-- hero -->
-<section class="hero" id="top">
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grain"></div>
   <div class="wrap hero-in">
@@ -485,7 +515,6 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
       </div>
     </div>
   </div>
-  <div class="scroll-hint" aria-hidden="true"><div class="wheel"></div>Scroll</div>
 </section>
 
 <!-- ticker -->
@@ -503,29 +532,29 @@ footer{background:#0e0f0c;padding:80px 0 0;position:relative;overflow:hidden}
     <p class="sec-sub">Start with the three dishes our regulars order again and again. Cooked to order, generous portions, honest prices.</p></div>
     <div class="sig-grid">
       <article class="sig-card rv rv-d1">
-        <span class="tagpill">Most Ordered</span>
-        <div class="ph"><img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?q=80&w=900&auto=format&fit=crop" alt="Smoky party jollof rice with grilled chicken" loading="lazy"></div>
+        <span class="tagpill">Northern Classic</span>
+        <div class="ph"><img src="assets/tuo-zaafi.jpg" alt="Tuo Zaafi with ayoyo soup and tender meat at Obaapa Essen" loading="lazy"></div>
         <div class="bd">
-          <h3>Party Jollof & Chicken</h3>
-          <p>Slow-cooked over open flame for that smoky party taste, with juicy grilled chicken and shito on the side.</p>
-          <div class="row"><span class="price">GH₵ 65</span><button class="add-mini" data-add="jollof-chicken">Add +</button></div>
+          <h3>Tuo Zaafi</h3>
+          <p>Soft, smooth T.Z. the northern way — served in rich green ayoyo soup with tender, slow-cooked meat.</p>
+          <div class="row"><span class="price">GH₵ 60</span><button class="add-mini" data-add="tuo-zaafi">Add +</button></div>
         </div>
       </article>
       <article class="sig-card rv rv-d2">
         <span class="tagpill">Chef's Pride</span>
-        <div class="ph"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop" alt="Grilled whole tilapia served hot" loading="lazy"></div>
+        <div class="ph"><img src="assets/fufuo.jpg" alt="Fufuo and goat meat soup at Obaapa Essen" loading="lazy"></div>
         <div class="bd">
-          <h3>Banku & Grilled Tilapia</h3>
-          <p>Whole tilapia char-grilled to order, served with soft banku, fresh pepper sauce and salad. The weekend classic.</p>
-          <div class="row"><span class="price">GH₵ 95</span><button class="add-mini" data-add="banku-tilapia">Add +</button></div>
+          <h3>Fufuo & Goat Meat Soup</h3>
+          <p>Pounded fufuo in hot, spicy soup loaded with tender goat meat — the bowl our regulars cross town for.</p>
+          <div class="row"><span class="price">GH₵ 80</span><button class="add-mini" data-add="fufu-goat">Add +</button></div>
         </div>
       </article>
       <article class="sig-card rv rv-d3">
         <span class="tagpill">Saturday Special</span>
-        <div class="ph"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=900&auto=format&fit=crop" alt="Waakye special with all the accompaniments" loading="lazy"></div>
+        <div class="ph"><img src="assets/waakye.jpg" alt="Waakye special with gari, spaghetti, egg, fried fish and shito at Obaapa Essen" loading="lazy"></div>
         <div class="bd">
-          <h3>Waakye Special</h3>
-          <p>Rice & beans done properly — with gari, spaghetti, boiled egg, fried fish, wele and our signature shito.</p>
+          <h3>Waakye</h3>
+          <p>Rice & beans done properly — with gari, spaghetti, boiled egg, fried fish and our signature shito.</p>
           <div class="row"><span class="price">GH₵ 55</span><button class="add-mini" data-add="waakye-special">Add +</button></div>
         </div>
       </article>
@@ -815,7 +844,8 @@ const MENU = [
   {id:"waakye-special",cat:"Local Favourites",name:"Waakye Special",price:55,desc:"Rice & beans with gari, spaghetti, egg, fried fish, wele and shito.",badge:"Saturday Fave"},
   {id:"banku-tilapia",cat:"Local Favourites",name:"Banku & Grilled Tilapia",price:95,desc:"Whole char-grilled tilapia with soft banku and fresh pepper.",badge:"Chef's Pride"},
   {id:"banku-okro",cat:"Local Favourites",name:"Banku & Okro Stew",price:60,desc:"Rich okro stew loaded with assorted meat and smoked fish."},
-  {id:"fufu-goat",cat:"Local Favourites",name:"Fufu & Goat Light Soup",price:80,desc:"Pounded fufu in hot, spicy light soup with tender goat meat."},
+  {id:"fufu-goat",cat:"Local Favourites",name:"Fufuo & Goat Meat Soup",price:80,desc:"Pounded fufuo in hot, spicy soup with tender goat meat.",badge:"Signature"},
+  {id:"tuo-zaafi",cat:"Local Favourites",name:"Tuo Zaafi (T.Z.)",price:60,desc:"Northern classic — smooth T.Z. in green ayoyo soup with tender meat.",badge:"Signature"},
   {id:"fufu-chicken",cat:"Local Favourites",name:"Fufu & Chicken Soup",price:70,desc:"Classic comfort — fufu with free-range chicken light soup."},
   {id:"kenkey-fish",cat:"Local Favourites",name:"Kenkey & Fried Fish",price:50,desc:"Ga kenkey with crispy fried fish, ground pepper and shito."},
   {id:"omo-tuo",cat:"Local Favourites",name:"Omo Tuo & Groundnut Soup",price:65,desc:"Soft rice balls in creamy groundnut soup (Sundays)."},
